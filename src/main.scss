@@ -1,0 +1,156 @@
+// Grid System
+// From Grid Review
+
+// basic design
+
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --blue: #3639FB;
+    --red: #E91A14;
+    --white: #E1E5DE;
+    --black:#25242F;
+    --title:"Anton SC", sans-serif;
+    --body:"Source Sans 3", sans-serif;
+}
+
+/* Type */
+body {
+    font-family: var(--body);
+    background-color: var(--white);
+}
+
+body::before,
+body::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body::before {
+    background-image: url('./assets/texture/grain.svg#noise-filter');
+    background-size: 50px;
+    background-repeat: repeat;
+    z-index: 99;
+}
+
+* {
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--title);
+    margin-bottom: 0.5rem;
+}
+
+h1, .h1 { font-size: 4.209rem }
+h2, .h2 { font-size: 3.157rem }
+h3, .h3 { font-size: 2.369rem }
+h4, .h4 { font-size: 1.777rem }
+h5, .h5 { font-size: 1.333rem }
+h6, .h6 { font-size: 1rem }
+
+p, ul, ol {
+    margin-bottom: 1rem;
+}
+
+/* Layout */
+section {
+    margin: 2.5rem 0;
+}
+
+ul, ol {
+    margin-left: 2rem;
+}
+
+.container {
+    max-width: 80rem; /* Maximum width of the website's grid */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+@media screen and (min-width: 568px) {
+    
+    .col-1-sm { grid-column: span 1; }
+    .col-2-sm { grid-column: span 2; }
+    .col-3-sm { grid-column: span 3; }
+    .col-4-sm { grid-column: span 4; }
+    .col-5-sm { grid-column: span 5; }
+    .col-6-sm { grid-column: span 6; }
+    .col-7-sm { grid-column: span 7; }
+    .col-8-sm { grid-column: span 8; }
+    .col-9-sm { grid-column: span 9; }
+    .col-10-sm { grid-column: span 10; }
+    .col-11-sm { grid-column: span 11; }
+    .col-12-sm { grid-column: span 12; }
+
+}
+
+@media screen and (min-width: 834px) {
+    
+    .col-1-md { grid-column: span 1; }
+    .col-2-md { grid-column: span 2; }
+    .col-3-md { grid-column: span 3; }
+    .col-4-md { grid-column: span 4; }
+    .col-5-md { grid-column: span 5; }
+    .col-6-md { grid-column: span 6; }
+    .col-7-md { grid-column: span 7; }
+    .col-8-md { grid-column: span 8; }
+    .col-9-md { grid-column: span 9; }
+    .col-10-md { grid-column: span 10; }
+    .col-11-md { grid-column: span 11; }
+    .col-12-md { grid-column: span 12; }
+
+}
+
+@media screen and (min-width: 1080px) {
+    
+    .col-1-lg { grid-column: span 1; }
+    .col-2-lg { grid-column: span 2; }
+    .col-3-lg { grid-column: span 3; }
+    .col-4-lg { grid-column: span 4; }
+    .col-5-lg { grid-column: span 5; }
+    .col-6-lg { grid-column: span 6; }
+    .col-7-lg { grid-column: span 7; }
+    .col-8-lg { grid-column: span 8; }
+    .col-9-lg { grid-column: span 9; }
+    .col-10-lg { grid-column: span 10; }
+    .col-11-lg { grid-column: span 11; }
+    .col-12-lg { grid-column: span 12; }
+
+}
+
+// Utility Classes
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-items: space-between;
+}
+
+
