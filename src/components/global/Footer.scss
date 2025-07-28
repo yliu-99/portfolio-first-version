@@ -1,0 +1,32 @@
+@use "../../main.scss" as *;
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .copyright {
+        text-align: center;
+        color: var(--gray);
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .socials {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        list-style: none;
+        a {
+            color: var(--red);
+            font-size: 2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--blue);
+        }
+    }
+}

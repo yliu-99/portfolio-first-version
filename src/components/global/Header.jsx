@@ -34,7 +34,7 @@ function Header() {
                 <a href="/about">ABOUT</a>
               </li>
               <li>
-                <a href="/design">DESIGN</a>
+                <a href="/graphic">GRAPHIC</a>
               </li>
               <li className="center-link">
                 <a href="/" className="middle">
