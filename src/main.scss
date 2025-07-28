@@ -16,8 +16,12 @@
 
 /* Type */
 body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
     font-family: var(--body);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 body::before,
@@ -25,13 +29,17 @@ body::after {
     position: fixed;
     left: 0;
     top: 0;
+    left: 0;
+    right: 0;
     content: '';
-    width: 100%;
+    margin: 0;
+    width: 100vw;
     height: 100%;
     z-index: -1;
 }
 
 body::before {
+    margin: 0;
     filter: url(./assets/texture/grain.svg#noise-filter) opacity(0.8);
     z-index: 9999;
     pointer-events: none;

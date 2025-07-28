@@ -1,11 +1,13 @@
 @use "../../main.scss" as *;
 footer {
-    width: 100%;
     display: flex;
     flex-direction: column;
     .copyright {
         text-align: center;
         color: var(--gray);
+    }
+    h4 {
+        color: var(--blue);
     }
     .container {
         display: flex;

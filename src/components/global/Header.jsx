@@ -6,9 +6,10 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="red-bar"></div>
+        <div className="gradient-blur"></div>
         <div className="dividers">
-        <div className="red divider"></div>
-        <div className="blue divider"></div>
+          <div className="red divider"></div>
+          <div className="blue divider"></div>
         </div>
         <div className="container">
           <ul className="socials">
