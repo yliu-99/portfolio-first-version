@@ -1,7 +1,7 @@
 import Footer from "../global/Footer";
 import Header from "../global/Header";
 import Hero from "../home/Hero";
-import About from "../home/About";
+import About from "../home/AboutSection";
 import Projects from "../home/Projects";
 
 

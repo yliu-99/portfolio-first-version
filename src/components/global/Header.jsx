@@ -35,7 +35,7 @@ function Header() {
                 <a href="/about">ABOUT</a>
               </li>
               <li>
-                <a href="/graphic">GRAPHIC</a>
+                <a href="/projects">PROJECTS</a>
               </li>
               <li className="center-link">
                 <a href="/" className="middle">
@@ -49,10 +49,10 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a href="/video">VIDEO</a>
+                <a href="/graphic">GRAPHIC</a>
               </li>
               <li>
-                <a href="/contact">CONTACT</a>
+                <a href="/video">VIDEO</a>
               </li>
             </ul>
           </nav>
