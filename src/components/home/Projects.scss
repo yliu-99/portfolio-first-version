@@ -220,7 +220,6 @@
   }
 }
 
-// Less intense glitch animation keyframes
 @keyframes glitch-flicker {
   0%, 100% { transform: translate(1px, -0.5px); }
   25% { transform: translate(-0.5px, 1px); }
