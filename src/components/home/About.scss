@@ -1,0 +1,233 @@
+.about {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--white);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 4rem 2rem;
+    
+    .about-content {
+      max-width: 60rem;
+      margin: 0 auto;
+      text-align: center;
+      
+      .intro-text {
+        margin-bottom: 4rem;
+        
+        p {
+          font-family: var(--body);
+          font-size: 2rem;
+          color: var(--black);
+          margin-bottom: 1rem;
+        }
+        
+        h2 {
+          font-family: var(--title);
+          font-size: 4rem;
+          margin: 0;
+          line-height: 1.1;
+          
+          &.multi-disciplinary {
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+          }
+          
+          &.designer {
+            color: var(--red);
+          }
+        }
+      }
+      
+      .inspiration-section {
+        .inspiration-intro {
+          font-family: var(--body);
+          font-size: 1.8rem;
+          color: var(--black);
+          margin-bottom: 2rem;
+        }
+        
+        .inspiration-words {
+          margin-bottom: 3rem;
+          line-height: 1.2;
+          
+          .inspiration-word {
+            font-family: var(--title);
+            font-size: 5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            
+            &:hover {
+              opacity: 0.7;
+            }
+            
+            &.red {
+              color: var(--red);
+            }
+            
+            &.blue {
+              color: var(--blue);
+            }
+            
+            // Data attribute for future JavaScript targeting
+            &[data-word="film"],
+            &[data-word="video"],
+            &[data-word="games"] {
+              // Future: These will be interactive elements
+            }
+            
+            &[data-word="art"],
+            &[data-word="music"] {
+              // Future: These will be interactive elements
+            }
+          }
+        }
+        
+        .more-btn {
+          display: inline-block;
+          background-color: var(--blue);
+          color: var(--white);
+          font-family: var(--title);
+          font-size: 1.2rem;
+          font-weight: bold;
+          padding: 0.8rem 2rem;
+          text-decoration: none;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          
+          &:hover {
+            background-color: var(--red);
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    
+    .decorative-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+      
+      .left-triangle {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8rem 0 8rem 6rem;
+        border-color: transparent transparent transparent var(--red);
+        opacity: 0.8;
+      }
+      
+      .right-triangle {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8rem 0 8rem 6rem;
+        border-color: transparent transparent transparent var(--blue);
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  // Responsive design
+  @media screen and (max-width: 834px) {
+    .container {
+      padding: 3rem 1.5rem;
+      
+      .about-content {
+        .intro-text {
+          p {
+            font-size: 1.6rem;
+          }
+          
+          h2 {
+            font-size: 3rem;
+          }
+        }
+        
+        .inspiration-section {
+          .inspiration-intro {
+            font-size: 1.5rem;
+          }
+          
+          .inspiration-words {
+            .inspiration-word {
+              font-size: 3.5rem;
+            }
+          }
+        }
+      }
+      
+      .decorative-elements {
+        .left-triangle,
+        .right-triangle {
+          border-width: 6rem 0 6rem 4rem;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 568px) {
+    .container {
+      padding: 2rem 1rem;
+      
+      .about-content {
+        .intro-text {
+          margin-bottom: 3rem;
+          
+          p {
+            font-size: 1.4rem;
+          }
+          
+          h2 {
+            font-size: 2.5rem;
+          }
+        }
+        
+        .inspiration-section {
+          .inspiration-intro {
+            font-size: 1.3rem;
+          }
+          
+          .inspiration-words {
+            .inspiration-word {
+              font-size: 2.8rem;
+            }
+          }
+        }
+      }
+      
+      .decorative-elements {
+        .left-triangle,
+        .right-triangle {
+          border-width: 4rem 0 4rem 3rem;
+        }
+        
+        .left-triangle {
+          left: 1rem;
+        }
+        
+        .right-triangle {
+          right: 1rem;
+        }
+      }
+    }
+  }
+}

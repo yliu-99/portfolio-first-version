@@ -20,7 +20,9 @@ function Hero() {
           </div>
         </div>
       </div>
-      
+      <div className="grid-bg">
+        <img src="src\assets\hero\grid-bg.svg" alt="" />
+      </div>
     </div>
   );
 }

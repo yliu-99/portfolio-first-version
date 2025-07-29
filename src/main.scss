@@ -152,6 +152,83 @@ ul, ol {
 
 }
 
+// buttons
+// button
+button,
+.btn,
+a.more-btn,
+a.view-all-btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: var(--title); // Preserved
+  font-size: 1.2rem;  
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--white); // Preserved
+  transition: all 0.5s ease-in-out;
+  z-index: 1; // Ensure text is above the background
+
+  // Blue overlay (starts covering 80%, slides to 20% on hover)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 100%;
+    background-color: var(--blue); // Preserved
+    opacity: 0.7;
+    transition: all 0.4s ease;
+    z-index: -1; // Behind the text
+  }
+
+  // Red left stripe (small strip behind everything)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--red); // Same red, just reinforcing the "left strip"
+    z-index: -2; // Under everything
+  }
+
+  // Text content
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    &::before {
+      transform: translate(90%, 0); // Slides to the left
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Specific button variations
+.btn-small {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-large {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.4rem;
+}
+
 // Utility Classes
 .flex {
     display: flex;

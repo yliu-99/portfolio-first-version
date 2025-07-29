@@ -8,7 +8,7 @@
     }
     .hero-elements {
       width: 100%;
-      height: 100%;
+      height: 50vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -23,11 +23,20 @@
         margin: 0;
       }
       .moth img {
-        transform: scale(2.5);
+        width: 120rem;;
       }
       .circle img {
-        transform: scale(2);
+        width: 60rem;
       }
     }
   }
+  .grid-bg {
+    width: 100%;
+    height: 175%;
+  img {
+    width: 100vw;
+    z-index: -1;
+    top: 75%;
+  }
+}
 }
