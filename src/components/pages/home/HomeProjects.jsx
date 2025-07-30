@@ -1,6 +1,6 @@
-import "./Projects.scss";
+import "./HomeProjects.scss";
 
-function Projects() {
+function HomeProjects() {
   return (
     <div className="projects">
       <div className="container">
@@ -107,4 +107,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default HomeProjects;

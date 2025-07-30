@@ -1,6 +1,6 @@
 import Hero from "../home/Hero";
 import AboutSection from "../home/AboutSection";
-import Projects from "../home/Projects";
+import HomeProjects from "./HomeProjects";
 
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
         <div>
         <Hero />
         <AboutSection />
-        <Projects />
+        <HomeProjects />
         </div>
     );
 }
