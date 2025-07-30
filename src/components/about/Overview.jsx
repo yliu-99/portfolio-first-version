@@ -1,6 +1,6 @@
 function Overview() {
   return (
-    <div className="about-overview">
+    <div className="about-overview container">
       <img></img>
       <h2>About Me</h2>
       <p>Hi, I’m Yuhan. I am a designer and storyteller and I use creativity as my way of connecting with the world. Currently studying as a New Media Design and Web Development student at BCIT, I am excited to spend each day learning new ways of bringing ideas to life through design, code, and storytelling. Whether I’m building a brand, filming creative content, designing sound environments, or creating striking motion graphics, I always aim to make something that feels meaningful. My biggest inspirations come from film, video games, and music, as well as the storytelling within these mediums that evokes feelings, both vulnerable and beautiful, in people. </p>
