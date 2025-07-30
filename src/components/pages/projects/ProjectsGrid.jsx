@@ -12,7 +12,7 @@ function ProjectsGrid({ projects, isLoading }) {
         )}
         <div className={`projects-grid ${isLoading ? 'loading' : ''}`}>
           {projects.map((project, index) => (
-            <ProjectCard 
+            <ProjectsCard 
               key={project.id} 
               project={project} 
               index={index}

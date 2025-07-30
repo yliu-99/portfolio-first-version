@@ -1,9 +1,4 @@
-import fableImage from '../assets/projects/fable-fragrances.jpg';
-import vancouverImage from '../assets/projects/vancouver-horror.jpg';
-import thrashImage from '../assets/projects/thrash-hair.jpg';
-import apexVideo from '../assets/projects/apex.mp4';
-import horizonsVideo from '../assets/projects/true-horizons.mp4';
-import mythbustersVideo from '../assets/projects/mythbusters.mp4';
+const placeholderImage = "https://via.placeholder.com/800x400";
 
 export const projectsData = [
   {
@@ -11,7 +6,7 @@ export const projectsData = [
     title: 'FABLE FRAGRANCES',
     slug: 'fable-fragrances',
     type: 'image',
-    media: fableImage,
+    media: placeholderImage,
     year: '2024',
     description: 'A complete branding and packaging design project for a luxury fragrance line, focusing on mystical and enchanting visual storytelling.',
     chips: ['graphic design', 'photoshop', 'product design', 'branding'],
@@ -23,7 +18,7 @@ export const projectsData = [
     title: 'VANCOUVER HORROR SHOW',
     slug: 'vancouver-horror',
     type: 'image',
-    media: vancouverImage,
+    media: placeholderImage,
     year: '2024',
     description: 'Film festival rebrand focusing on bold typography and horror-inspired visual elements that capture the essence of contemporary horror cinema.',
     chips: ['graphic design', 'branding', 'redesign', 'typography'],
@@ -35,7 +30,7 @@ export const projectsData = [
     title: 'THRASH! HAIR COLOUR',
     slug: 'thrash-hair',
     type: 'image',
-    media: thrashImage,
+    media: placeholderImage,
     year: '2024',
     description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
     chips: ['graphic design', 'illustrator', 'product design', 'branding'],
@@ -47,7 +42,7 @@ export const projectsData = [
     title: 'APEX MOUNTAIN BIKES',
     slug: 'apex-mountain',
     type: 'video',
-    media: apexVideo,
+    media: placeholderImage,
     year: '2024',
     description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
     chips: ['video', 'music production', 'storytelling', 'cinematography'],
@@ -59,7 +54,7 @@ export const projectsData = [
     title: 'TRUE HORIZONS',
     slug: 'true-horizons',
     type: 'video',
-    media: horizonsVideo,
+    media: placeholderImage,
     year: '2024',
     description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
     chips: ['video', 'storytelling', 'cinematography', 'editing'],
@@ -71,7 +66,7 @@ export const projectsData = [
     title: 'MYTHBUSTERS',
     slug: 'mythbusters',
     type: 'video',
-    media: mythbustersVideo,
+    media: placeholderImage,
     year: '2024',
     description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
     chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],

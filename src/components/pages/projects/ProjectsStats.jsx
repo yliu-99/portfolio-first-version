@@ -1,4 +1,4 @@
-
+import  { useState, useEffect } from 'react';
 
 function ProjectsStats({ projects }) {
   const [animatedStats, setAnimatedStats] = useState({
