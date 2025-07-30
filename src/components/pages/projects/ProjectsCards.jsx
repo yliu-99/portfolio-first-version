@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function ProjectCard({ project, index, variant = 'default' }) {
+function ProjectsCard({ project, index, variant = 'default' }) {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -83,4 +83,4 @@ function ProjectCard({ project, index, variant = 'default' }) {
     </div>
   );
 }
-export default ProjectCard;
+export default ProjectsCard;

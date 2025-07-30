@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectsCard from './ProjectsCard';
 
 function ProjectsGrid({ projects, isLoading }) {
   return (

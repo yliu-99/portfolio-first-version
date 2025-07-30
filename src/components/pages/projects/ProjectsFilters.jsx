@@ -1,6 +1,4 @@
 import React from 'react';
-import './ProjectsFilter.scss';
-
 function ProjectsFilter({ chips, activeFilter, onFilterChange }) {
   const filterCategories = [
     { key: 'all', label: 'All Projects', icon: '⚡' },
