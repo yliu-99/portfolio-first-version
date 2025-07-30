@@ -1,0 +1,121 @@
+import fableImage from '../assets/projects/fable-fragrances.jpg';
+import vancouverImage from '../assets/projects/vancouver-horror.jpg';
+import thrashImage from '../assets/projects/thrash-hair.jpg';
+import apexVideo from '../assets/projects/apex-mountain.mp4';
+import horizonsVideo from '../assets/projects/true-horizons.mp4';
+import mythbustersVideo from '../assets/projects/mythbusters.mp4';
+
+export const projectsData = [
+  {
+    id: 'fable',
+    title: 'FABLE FRAGRANCES',
+    slug: 'fable-fragrances',
+    type: 'image',
+    media: fableImage,
+    year: '2024',
+    description: 'A complete branding and packaging design project for a luxury fragrance line, focusing on mystical and enchanting visual storytelling.',
+    chips: ['graphic design', 'photoshop', 'product design', 'branding'],
+    category: 'design',
+    featured: true
+  },
+  {
+    id: 'vancouver',
+    title: 'VANCOUVER HORROR SHOW',
+    slug: 'vancouver-horror',
+    type: 'image',
+    media: vancouverImage,
+    year: '2024',
+    description: 'Film festival rebrand focusing on bold typography and horror-inspired visual elements that capture the essence of contemporary horror cinema.',
+    chips: ['graphic design', 'branding', 'redesign', 'typography'],
+    category: 'design',
+    featured: true
+  },
+  {
+    id: 'thrash',
+    title: 'THRASH! HAIR COLOUR',
+    slug: 'thrash-hair',
+    type: 'image',
+    media: thrashImage,
+    year: '2024',
+    description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
+    chips: ['graphic design', 'illustrator', 'product design', 'branding'],
+    category: 'design',
+    featured: false
+  },
+  {
+    id: 'apex',
+    title: 'APEX MOUNTAIN BIKES',
+    slug: 'apex-mountain',
+    type: 'video',
+    media: apexVideo,
+    year: '2024',
+    description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
+    chips: ['video', 'music production', 'storytelling', 'cinematography'],
+    category: 'video',
+    featured: true
+  },
+  {
+    id: 'horizons',
+    title: 'TRUE HORIZONS',
+    slug: 'true-horizons',
+    type: 'video',
+    media: horizonsVideo,
+    year: '2024',
+    description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
+    chips: ['video', 'storytelling', 'cinematography', 'editing'],
+    category: 'video',
+    featured: false
+  },
+  {
+    id: 'mythbusters',
+    title: 'MYTHBUSTERS',
+    slug: 'mythbusters',
+    type: 'video',
+    media: mythbustersVideo,
+    year: '2024',
+    description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
+    chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],
+    category: 'motion',
+    featured: true
+  }
+];
+
+// Helper functions for filtering and categorizing
+export const getProjectsByCategory = (category) => {
+  return projectsData.filter(project => project.category === category);
+};
+
+export const getFeaturedProjects = () => {
+  return projectsData.filter(project => project.featured);
+};
+
+export const getProjectBySlug = (slug) => {
+  return projectsData.find(project => project.slug === slug);
+};
+
+export const getAllChips = () => {
+  const allChips = projectsData.flatMap(project => project.chips);
+  return [...new Set(allChips)].sort();
+};
+
+export const getProjectsByChip = (chip) => {
+  return projectsData.filter(project => 
+    project.chips.some(projectChip => 
+      projectChip.toLowerCase().includes(chip.toLowerCase())
+    )
+  );
+};
+
+// Statistics helpers
+export const getProjectStats = () => {
+  return {
+    total: projectsData.length,
+    byCategory: {
+      design: getProjectsByCategory('design').length,
+      video: getProjectsByCategory('video').length,
+      motion: getProjectsByCategory('motion').length
+    },
+    featured: getFeaturedProjects().length,
+    mostUsedChips: getAllChips().slice(0, 5) // Top 5 most common skills
+  };
+};

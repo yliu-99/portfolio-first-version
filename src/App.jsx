@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Home from './components/pages/home/Home';
 import About from './components/pages/about/About';
 import Projects from './components/pages/Projects/Projects';
-import Graphic from './components/pages/graphic/Graphic.jsx';
+import Graphic from './components/pages/graphic/Graphic';
 import Video from './components/pages/video/Video.jsx';
 
 import Header from './components/global/Header';
