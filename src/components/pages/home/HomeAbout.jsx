@@ -1,6 +1,6 @@
-import "./AboutSection.scss";
+import "./HomeAbout.scss";
 
-function About() {
+function HomeAbout() {
   return (
     <div className="about">
       <div className="container">
@@ -40,4 +40,4 @@ function About() {
   );
 }
 
-export default About;
+export default HomeAbout;

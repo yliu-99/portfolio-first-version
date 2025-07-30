@@ -11,7 +11,7 @@ function HomeProjects() {
         <div className="projects-grid">
           <a href="/projects/fable-fragrances" className="project-card" data-project="fable">
             <div className="project-image">
-              <img src="src/assets/projects/fable-fragrances.jpg" alt="Fable Fragrances Project" />
+              <img src="src/assets/projects/fable-fragrances.png" alt="Fable Fragrances Project" />
             </div>
             <div className="project-info">
               <h3>FABLE FRAGRANCES</h3>
@@ -25,7 +25,7 @@ function HomeProjects() {
           
           <a href="/projects/vancouver-horror" className="project-card" data-project="vancouver">
             <div className="project-image">
-              <img src="src/assets/projects/vancouver-horror.jpg" alt="Vancouver Horror Show Project" />
+              <img src="src/assets/projects/vancouver-horror-show.png" alt="Vancouver Horror Show Project" />
             </div>
             <div className="project-info">
               <h3>VANCOUVER HORROR SHOW</h3>
@@ -39,7 +39,7 @@ function HomeProjects() {
           
           <a href="/projects/thrash-hair" className="project-card" data-project="thrash">
             <div className="project-image">
-              <img src="src/assets/projects/thrash-hair.jpg" alt="Thrash Hair Colour Project" />
+              <img src="src/assets/projects/thrash.svg" alt="Thrash Hair Colour Project" />
             </div>
             <div className="project-info">
               <h3>THRASH! HAIR COLOUR</h3>
@@ -53,9 +53,7 @@ function HomeProjects() {
           
           <a href="/projects/apex-mountain" className="project-card" data-project="apex">
             <div className="project-image">
-              <video muted>
-                <source src="src/assets/projects/apex-mountain.mp4" type="video/mp4" />
-              </video>
+              <img src="src/assets/projects/apex.png" alt="Apex Mountain Bikes Project" />
             </div>
             <div className="project-info">
               <h3>APEX MOUNTAIN BIKES</h3>
@@ -69,9 +67,7 @@ function HomeProjects() {
           
           <a href="/projects/true-horizons" className="project-card" data-project="horizons">
             <div className="project-image">
-              <video muted>
-                <source src="src/assets/projects/true-horizons.mp4" type="video/mp4" />
-              </video>
+              <img src="src/assets/projects/true-horizons.png" alt="True Horizons Project" />
             </div>
             <div className="project-info">
               <h3>TRUE HORIZONS</h3>
@@ -84,9 +80,7 @@ function HomeProjects() {
           
           <a href="/projects/mythbusters" className="project-card" data-project="mythbusters">
             <div className="project-image">
-              <video muted>
-                <source src="src/assets/projects/mythbusters.mp4" type="video/mp4" />
-              </video>
+              <img src="src/assets/projects/mythbusters.png" alt="Mythbusters Project" />
             </div>
             <div className="project-info">
               <h3>MYTHBUSTERS</h3>

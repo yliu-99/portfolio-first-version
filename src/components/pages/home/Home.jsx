@@ -1,13 +1,13 @@
-import Hero from "../home/Hero";
-import AboutSection from "../home/AboutSection";
+import HomeHero from "./HomeHero";
+import HomeAbout from "./HomeAbout";
 import HomeProjects from "./HomeProjects";
 
 
 function Home() {
     return (
         <div>
-        <Hero />
-        <AboutSection />
+        <HomeHero />
+        <HomeAbout />
         <HomeProjects />
         </div>
     );

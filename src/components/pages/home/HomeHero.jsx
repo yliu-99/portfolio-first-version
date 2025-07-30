@@ -1,6 +1,6 @@
-import "./Hero.scss";
+import "./HomeHero.scss";
 
-function Hero() {
+function HomeHero() {
   return (
     <div className="hero">
       <div className="container">
@@ -27,4 +27,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default HomeHero;
