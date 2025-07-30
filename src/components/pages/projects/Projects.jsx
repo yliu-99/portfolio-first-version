@@ -1,9 +1,9 @@
 // Projects.jsx - Main Projects Page
 import React, { useState, useEffect } from 'react';
-import ProjectsHero from './ProjectsHero.jsx';
-import ProjectsFilter from './ProjectsFilter.jsx';
-import ProjectsGrid from './ProjectsGrid.jsx';
-import ProjectsStats from './ProjectsStats.jsx';
+import ProjectsHero from './ProjectsHero';
+import ProjectsStats from './ProjectsStats';
+import ProjectsFilter from './ProjectsFilter';  
+import ProjectsGrid from './ProjectsGrid';
 import { projectsData } from '../../../data/projectsData.js';
 import './Projects.scss';
 

@@ -1,7 +1,7 @@
 import fableImage from '../assets/projects/fable-fragrances.jpg';
 import vancouverImage from '../assets/projects/vancouver-horror.jpg';
 import thrashImage from '../assets/projects/thrash-hair.jpg';
-import apexVideo from '../assets/projects/apex-mountain.mp4';
+import apexVideo from '../assets/projects/apex.mp4';
 import horizonsVideo from '../assets/projects/true-horizons.mp4';
 import mythbustersVideo from '../assets/projects/mythbusters.mp4';
 
