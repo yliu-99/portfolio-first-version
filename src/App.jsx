@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import Projects from './components/pages/Projects';
-import Graphic from './components/pages/Graphic.jsx';
-import Video from './components/pages/Video';
+import Home from './components/pages/home/Home';
+import About from './components/pages/about/About';
+import Projects from './components/pages/Projects/Projects';
+import Graphic from './components/pages/graphic/Graphic.jsx';
+import Video from './components/pages/video/Video.jsx';
 
 import Header from './components/global/Header';
 import Footer from './components/global/Footer'; // Add your footer component
