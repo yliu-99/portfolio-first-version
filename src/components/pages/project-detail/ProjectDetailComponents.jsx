@@ -69,7 +69,7 @@ function ProjectHero({
           <div className="hero-media">
             {mediaType === "video" ? (
               <iframe
-                src={`${media}?autoplay=1&mute=1&loop=1`}
+                src={`${media}?autoplay=1&mute=1&loop=1&controls=0`}
                 title={title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -80,13 +80,12 @@ function ProjectHero({
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  pointerEvents: "none", // Prevent interaction with play button
+                  pointerEvents: "none",
                 }}
               ></iframe>
             ) : (
               <img
                 src={media}
-                alt={title}
                 onLoad={() => setMediaLoaded(true)}
                 className={mediaLoaded ? "loaded" : ""}
               />
@@ -204,7 +203,7 @@ function ProjectProcess({
               {section.video && (
                 <div className="section-video">
                   <iframe
-                    src={`${section.video}?autoplay=1&mute=1&loop=1`}
+                    src={`${section.video}?autoplay=1&mute=1&loop=1&controls=0`}
                     title={section.subtitle || `Process step ${index + 1}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -213,7 +212,6 @@ function ProjectProcess({
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      pointerEvents: "none", // Prevent interaction with play button
                     }}
                   ></iframe>
                 </div>
@@ -256,7 +254,7 @@ function RelatedProjects({ projects = [], title = "Related Projects" }) {
               <div className="related-media">
                 {project.mediaType === "video" ? (
                   <iframe
-                    src={`${project.media}?autoplay=1&mute=1&loop=1`}
+                    src={`${project.media}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1`}
                     title={project.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -264,9 +262,7 @@ function RelatedProjects({ projects = [], title = "Related Projects" }) {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
-                      pointerEvents: "none", // Prevent interaction with play button
-                    }}
+                      objectFit: "cover",                    }}
                   ></iframe>
                 ) : (
                   <img src={project.media} alt={project.title} />

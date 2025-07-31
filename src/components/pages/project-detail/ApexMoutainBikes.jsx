@@ -1,5 +1,3 @@
-// ApexMountainBikes.jsx - Project detail page
-import React from 'react';
 import { 
   ProjectDetailLayout, 
   ProjectHero, 
@@ -15,10 +13,10 @@ import '../../../data/projectsData'; // Import projects data
 // Placeholder image for all media
 const placeholderImage = "https://via.placeholder.com/800x400";
 const apexMoutainBikesVid = 'https://www.youtube.com/embed/dO7TxaDxEjk?si=Z77HXMo1kgau1YqQ';
-const apexScreenshot = 'src/assets/projects/apex/apex-screenshot.png';
-const apexInterview = 'src/assets/projects/apex/apex-interview.png';
-const garageBand = 'src/assets/projects/apex/garage-band.jpg';
-const premierPro = 'src/assets/projects/apex/premier-pro.jpg';
+import apexScreenshot from '../../../assets/projects/apex/apex-screenshot.png';
+import apexInterview from '../../../assets/projects/apex/apex-interview.png';
+import garageBand from '../../../assets/projects/apex/garage-band.jpg';
+import premierPro from '../../../assets/projects/apex/premier-pro.jpg';
 
 
 // images
@@ -83,7 +81,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={apexScreenshot} alt="" />
+            <img src={apexScreenshot} alt="a mountain biker carrying their bike up a hill" />
           </div>
           
           <h3>Filming</h3>
@@ -92,7 +90,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={apexInterview} alt="Filming process" />
+            <img src={apexInterview} alt="" />
           </div>
           
           <h3>Music Production</h3>
@@ -101,7 +99,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={garageBand} alt="Music production process" />
+            <img src={garageBand} alt="" />
           </div>
           
           <h3>Video Edit</h3>
@@ -110,7 +108,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={premierPro} alt="Video editing process" />
+            <img src={premierPro} alt="" />
           </div>
           
           <h3>Final Touches</h3>
