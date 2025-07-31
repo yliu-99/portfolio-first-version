@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Gallery.scss"; // Assuming you have a Gallery.scss for styling
+import "./Gallery.scss";
 
 function Gallery() {
   const images = [
@@ -22,19 +22,23 @@ function Gallery() {
 
   return (
     <div className="gallery">
-      <h2>Gallery</h2>
-      <div className="carousel">
-        <button className="prev-btn" onClick={handlePrev}>
-          &#8249;
-        </button>
-        <img
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          className="carousel-image"
-        />
-        <button className="next-btn" onClick={handleNext}>
-          &#8250;
-        </button>
+      <div className="container">
+        <h2>Gallery</h2>
+        <div className="carousel">
+          <div className="prev-btn" onClick={handlePrev}></div>
+          <img
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            className="carousel-image"
+          />
+          <div className="next-btn" onClick={handleNext}></div>
+          <div className="image-counter">
+            {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+          </div>
+        </div>
+        <div className="gallery-description">
+          A curated collection of moments and inspirations that shape my creative journey. Each image tells a story of discovery, growth, and the beauty found in everyday experiences.
+        </div>
       </div>
     </div>
   );
