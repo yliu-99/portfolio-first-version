@@ -14,6 +14,12 @@ import '../../../data/projectsData'; // Import projects data
 
 // Placeholder image for all media
 const placeholderImage = "https://via.placeholder.com/800x400";
+const apexMoutainBikesVid = 'https://www.youtube.com/embed/dO7TxaDxEjk?si=Z77HXMo1kgau1YqQ';
+const apexScreenshot = 'src/assets/projects/apex/apex-screenshot.png';
+const apexInterview = 'src/assets/projects/apex/apex-interview.png';
+const garageBand = 'src/assets/projects/apex/garage-band.jpg';
+const premierPro = 'src/assets/projects/apex/premier-pro.jpg';
+
 
 // images
 
@@ -46,11 +52,11 @@ function ApexMountainBikes() {
       <ProjectHero 
         title="APEX MOUNTAIN BIKES"
         category="Video Production"
-        year="2024"
+        year="Feb 2025"
         description="The goal of this group project was to write, film, produce music, and edit a 2-minute talking head commercial for a fictional mountain bike company. We used the 3-point lighting technique and incorporated provided mountain bike footage. This project was created for the Video Storytelling (MDIA 2565) course during Term 2 of the New Media Design and Web Development Diploma at BCIT."
-        media={placeholderImage}
-        mediaType="image"
-        chips={['video', 'music production', 'storytelling', 'cinematography']}
+        media={apexMoutainBikesVid}
+        mediaType="video"
+        chips={['video', 'music production', 'storytelling','commercial']}
         bgColor="blue"
       />
       
@@ -77,7 +83,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={placeholderImage} alt="Brainstorming process" />
+            <img src={apexScreenshot} alt="" />
           </div>
           
           <h3>Filming</h3>
@@ -86,7 +92,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={placeholderImage} alt="Filming process" />
+            <img src={apexInterview} alt="Filming process" />
           </div>
           
           <h3>Music Production</h3>
@@ -95,7 +101,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={placeholderImage} alt="Music production process" />
+            <img src={garageBand} alt="Music production process" />
           </div>
           
           <h3>Video Edit</h3>
@@ -104,7 +110,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={placeholderImage} alt="Video editing process" />
+            <img src={premierPro} alt="Video editing process" />
           </div>
           
           <h3>Final Touches</h3>
