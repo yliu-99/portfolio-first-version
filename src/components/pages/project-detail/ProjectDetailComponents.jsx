@@ -79,6 +79,7 @@ function ProjectHero({
                 videoId={getYouTubeId(media)}
                 opts={{
                   width: "100%",
+                  objectFit: "cover",
                   playerVars: {
                     autoplay: 1,
                     mute: 1,
