@@ -1,6 +1,7 @@
 import "./header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import logoFull from "../../assets/logo/logo-full.png"; // Adjust path if necessary
 
 function Header() {
   const [rotation, setRotation] = useState(0);
@@ -66,8 +67,8 @@ function Header() {
                     }}
                   >
                     <img
-                      src="src/assets/logo/logo-full.png"
-                      alt="yuhan liu's logo, y and l combined together to look like an hourglass"
+                      src={logoFull}
+                      alt="yuhan liu's logo"
                     />
                   </div>
                   YUHAN LIU
