@@ -24,7 +24,7 @@ function HomeProjects() {
             </div>
           </Link>
           
-          <Link to="/projects/vancouver-horror" className="project-card" data-project="VANCOUVER HORROR SHOW">
+          <Link to="/projects/vancouver-horror-show" className="project-card" data-project="VANCOUVER HORROR SHOW">
             <div className="project-image">
               <img src="src/assets/projects/vancouver-horror-show.png" alt="Vancouver Horror Show Project" />
             </div>
@@ -52,7 +52,7 @@ function HomeProjects() {
             </div>
           </Link>
           
-          <Link to="../project-detail/ApexMoutainBikes.jsx" className="project-card" data-project="APEX MOUNTAIN BIKES">
+          <Link to="/projects/apex-mountain-bikes" className="project-card" data-project="APEX MOUNTAIN BIKES">
             <div className="project-image">
               <img src="src/assets/projects/apex.png" alt="Apex Mountain Bikes Project" />
             </div>

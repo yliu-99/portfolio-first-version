@@ -1,4 +1,10 @@
-const placeholderImage = "https://via.placeholder.com/800x400";
+
+const fableFragrancesImage = "src/assets/projects/fable-fragrances.png";
+const vancouverHorrorShowImage = "src/assets/projects/vancouver-horror-show.png";
+const thrashHairImage = "src/assets/projects/thrash.svg";
+const apexMountainBikesVid = "https://www.youtube.com/embed/dO7TxaDxEjk?si=Z77HXMo1kgau1YqQ";
+const trueHorizonsVid = "https://www.youtube.com/embed/EbJEhks53lA?si=RYiRPDSJ0d7MVQMW";
+const mythbustersVid = "https://www.youtube.com/embed/ioG4kkKj6ZM?si=ymFZFlZC33jhShYV";
 
 export const projectsData = [
   {
@@ -6,8 +12,8 @@ export const projectsData = [
     title: 'FABLE FRAGRANCES',
     slug: 'fable-fragrances',
     type: 'image',
-    media: placeholderImage,
-    year: '2024',
+    media: fableFragrancesImage,
+    year: 'Dec 2024',
     description: 'A complete branding and packaging design project for a luxury fragrance line, focusing on mystical and enchanting visual storytelling.',
     chips: ['graphic design', 'photoshop', 'product design', 'branding'],
     category: 'design',
@@ -16,10 +22,10 @@ export const projectsData = [
   {
     id: 'vancouver',
     title: 'VANCOUVER HORROR SHOW',
-    slug: 'vancouver-horror',
+    slug: 'vancouver-horror-show',
     type: 'image',
-    media: placeholderImage,
-    year: '2024',
+    media: vancouverHorrorShowImage,
+    year: 'Dec 2024',
     description: 'Film festival rebrand focusing on bold typography and horror-inspired visual elements that capture the essence of contemporary horror cinema.',
     chips: ['graphic design', 'branding', 'redesign', 'typography'],
     category: 'design',
@@ -30,8 +36,8 @@ export const projectsData = [
     title: 'THRASH! HAIR COLOUR',
     slug: 'thrash-hair',
     type: 'image',
-    media: placeholderImage,
-    year: '2024',
+    media: thrashHairImage,
+    year: 'Apr 2025',
     description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
     chips: ['graphic design', 'illustrator', 'product design', 'branding'],
     category: 'design',
@@ -40,10 +46,10 @@ export const projectsData = [
   {
     id: 'apex',
     title: 'APEX MOUNTAIN BIKES',
-    slug: 'apex-mountain',
+    slug: 'apex-mountain-bikes',
     type: 'video',
-    media: placeholderImage,
-    year: '2024',
+    media:  apexMountainBikesVid,
+    year: 'Feb 2025',
     description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
     chips: ['video', 'music production', 'storytelling', 'cinematography'],
     category: 'video',
@@ -54,8 +60,8 @@ export const projectsData = [
     title: 'TRUE HORIZONS',
     slug: 'true-horizons',
     type: 'video',
-    media: placeholderImage,
-    year: '2024',
+    media: trueHorizonsVid,
+    year: 'Apr 2025',
     description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
     chips: ['video', 'storytelling', 'cinematography', 'editing'],
     category: 'video',
@@ -66,8 +72,8 @@ export const projectsData = [
     title: 'MYTHBUSTERS',
     slug: 'mythbusters',
     type: 'video',
-    media: placeholderImage,
-    year: '2024',
+    media: mythbustersVid,
+    year: 'Jul 2025',
     description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
     chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],
     category: 'motion',

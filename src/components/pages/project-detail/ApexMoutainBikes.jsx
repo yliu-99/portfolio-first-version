@@ -8,8 +8,17 @@ import {
   RelatedProjects 
 } from './ProjectDetailComponents';
 
+import './ProjectDetail.scss';
+
+import '../../../data/projectsData'; // Import projects data
+
 // Placeholder image for all media
 const placeholderImage = "https://via.placeholder.com/800x400";
+
+// images
+
+const trueHorizonsVid = "https://www.youtube.com/embed/EbJEhks53lA?si=RYiRPDSJ0d7MVQMW";
+const mythbustersVid = "https://www.youtube.com/embed/ioG4kkKj6ZM?si=ymFZFlZC33jhShYV";
 
 function ApexMountainBikes() {
   // Define related projects
@@ -18,15 +27,15 @@ function ApexMountainBikes() {
       title: "TRUE HORIZONS",
       category: "video",
       slug: "true-horizons",
-      media: placeholderImage,
-      mediaType: "image"
+      media: trueHorizonsVid,
+      mediaType: "video"
     },
     {
       title: "MYTHBUSTERS",
       category: "video",
       slug: "mythbusters", 
-      media: placeholderImage,
-      mediaType: "image"
+      media: mythbustersVid,
+      mediaType: "video"
     }
   ];
 

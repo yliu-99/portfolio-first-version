@@ -25,21 +25,28 @@ function ProjectsCard({ project, index, variant = 'default' }) {
       <a href={`/projects/${project.slug}`} className="card-link">
         <div className="project-media">
           {project.type === 'video' ? (
-            <video 
-              muted 
-              loop 
-              playsInline
-              {...(isHovered && { autoPlay: true })}
-              onLoadedData={() => setImageLoaded(true)}
-            >
-              <source src={project.media} type="video/mp4" />
-            </video>
+            <iframe
+              src={`${project.media}?autoplay=1&mute=1&start=30`}
+              title={project.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className={imageLoaded ? 'loaded' : ''}
+              onLoad={() => setImageLoaded(true)}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                pointerEvents: 'none' // Prevent interaction with play button
+              }}
+            ></iframe>
           ) : (
             <img 
               src={project.media} 
               alt={project.title}
               onLoad={() => setImageLoaded(true)}
               className={imageLoaded ? 'loaded' : ''}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           )}
           <div className="media-overlay"></div>
@@ -83,4 +90,5 @@ function ProjectsCard({ project, index, variant = 'default' }) {
     </div>
   );
 }
+
 export default ProjectsCard;
