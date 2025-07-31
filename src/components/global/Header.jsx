@@ -1,7 +1,26 @@
 import "./header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 
 function Header() {
+  const [rotation, setRotation] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollTop / docHeight;
+      const rotationDegree = scrollFraction * 360; // Calculate rotation based on scroll progress
+      setRotation(rotationDegree);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className="header">
       <div className="header-container">
@@ -39,9 +58,15 @@ function Header() {
               </li>
               <li className="center-link">
                 <a href="/" className="middle">
-                  <div className="logo">
+                  <div
+                    className="logo"
+                    style={{
+                      transform: `rotate(${rotation}deg)`, // Apply rotation dynamically
+                      transition: "transform 0.1s linear", // Smooth rotation
+                    }}
+                  >
                     <img
-                      src="src\assets\logo\logo-full.png"
+                      src="src/assets/logo/logo-full.png"
                       alt="yuhan liu's logo, y and l combined together to look like an hourglass"
                     />
                   </div>
@@ -61,4 +86,5 @@ function Header() {
     </header>
   );
 }
+
 export default Header;

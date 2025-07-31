@@ -39,11 +39,29 @@
       }
 
       .moth img {
-        width: 120rem; // Keeps the moth size unchanged
+        width: 120rem;
+        opacity: 0.7; // Keeps the moth size unchanged
+        animation: pulse 3s ease-in-out infinite; // Gentle pulse animation
       }
 
       .circle img {
-        width: 60rem; // Keeps the circle size unchanged
+        width: 60rem;
+        opacity: 0.8; // Keeps the circle size unchanged
+      }
+
+      .animated-text {
+        position: relative;
+        width: 60rem;
+        height: 60rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+          animation: rotate-clock 8s ease-in-out infinite; // Rotate 1/3 at a time with bounce
+        }
       }
     }
   }
@@ -60,5 +78,57 @@
       position: absolute;
       top: 100; // Ensures the background grid stays at the bottom
     }
+  }
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1); // Default size
+  }
+  50% {
+    transform: scale(1.02); // Slightly larger size
+  }
+}
+
+@keyframes rotate-clock {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(120deg); // Rotate 1/3 of a circle
+  }
+  29% {
+    transform: rotate(125deg); // Slight bounce backward
+  }
+  33% {
+    transform: rotate(120deg); // Settle at the final position
+  }
+  58% {
+    transform: rotate(240deg); // Rotate another 1/3
+  }
+  62% {
+    transform: rotate(245deg); // Slight bounce backward
+  }
+  66% {
+    transform: rotate(240deg); // Settle at the final position
+  }
+  91% {
+    transform: rotate(360deg); // Complete the circle
+  }
+  95% {
+    transform: rotate(365deg); // Slight bounce backward
+  }
+  100% {
+    transform: rotate(360deg); // Seamless transition back to start
   }
 }
