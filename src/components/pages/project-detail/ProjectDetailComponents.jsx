@@ -14,6 +14,13 @@ function ProjectDetailLayout({ children, projectTitle }) {
 
 // ProjectHero.jsx - Reusable hero component
 import { useState } from "react";
+import YouTube from "react-youtube";
+
+// Helper to extract YouTube video ID from embed URL or URL
+function getYouTubeId(url) {
+  const match = url.match(/(?:\/embed\/|v=)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
 
 function ProjectHero({
   title,
@@ -23,7 +30,7 @@ function ProjectHero({
   media,
   mediaType = "image",
   chips = [],
-  bgColor = "blue", // 'blue', 'red', or 'gradient'
+  bgColor = "blue",
 }) {
   const [mediaLoaded, setMediaLoaded] = useState(false);
 
@@ -67,27 +74,40 @@ function ProjectHero({
           </div>
 
           <div className="hero-media">
-            {mediaType === "video" ? (
-              <iframe
-                src={`${media}?autoplay=1&mute=1&loop=1&controls=0`}
-                title={title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+            {mediaType === "video" && getYouTubeId(media) ? (
+              <YouTube
+                videoId={getYouTubeId(media)}
+                opts={{
+                  width: "100%",
+                  playerVars: {
+                    autoplay: 1,
+                    mute: 1,
+                    controls: 0,
+                    loop: 1,
+                    playlist: getYouTubeId(media),
+                  },
+                }}
                 className={mediaLoaded ? "loaded" : ""}
-                onLoad={() => setMediaLoaded(true)}
+                onReady={() => setMediaLoaded(true)}
+              />
+            ) : mediaType === "video" ? (
+              <video
+                src={media}
+                autoPlay
+                muted
+                loop
+                playsInline
                 style={{
                   width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  pointerEvents: "none",
                 }}
-              ></iframe>
+                onLoadedData={() => setMediaLoaded(true)}
+              />
             ) : (
               <img
                 src={media}
                 onLoad={() => setMediaLoaded(true)}
                 className={mediaLoaded ? "loaded" : ""}
+                alt={title}
               />
             )}
             <div className="media-glow"></div>
@@ -162,7 +182,6 @@ function ProjectProcess({
   children,
   sections = [],
 }) {
-  // If children are provided, use them for complete custom content
   if (children) {
     return (
       <section className="project-process">
@@ -174,7 +193,6 @@ function ProjectProcess({
     );
   }
 
-  // If sections are provided, use structured content
   return (
     <section className="project-process">
       <div className="container">
@@ -200,22 +218,38 @@ function ProjectProcess({
                 </div>
               )}
 
-              {section.video && (
+              {section.video && getYouTubeId(section.video) ? (
                 <div className="section-video">
-                  <iframe
-                    src={`${section.video}?autoplay=1&mute=1&loop=1&controls=0`}
-                    title={section.subtitle || `Process step ${index + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                  <YouTube
+                    videoId={getYouTubeId(section.video)}
+                    opts={{
+                      width: "100%",
+                      playerVars: {
+                        autoplay: 1,
+                        mute: 1,
+                        controls: 0,
+                        loop: 1,
+                        playlist: getYouTubeId(section.video),
+                      },
+                    }}
+                  />
+                </div>
+              ) : section.video ? (
+                <div className="section-video">
+                  <video
+                    src={section.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     style={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
                     }}
-                  ></iframe>
+                  />
                 </div>
-              )}
+              ) : null}
 
               <div className="section-text">
                 {typeof section.content === "string" ? (
@@ -252,18 +286,34 @@ function RelatedProjects({ projects = [], title = "Related Projects" }) {
               style={{ "--card-delay": `${index * 0.1}s` }}
             >
               <div className="related-media">
-                {project.mediaType === "video" ? (
-                  <iframe
-                    src={`${project.media}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1`}
-                    title={project.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                {project.mediaType === "video" && getYouTubeId(project.media) ? (
+                  <YouTube
+                    videoId={getYouTubeId(project.media)}
+                    opts={{
+                      width: "100%",
+                      objectFit: "cover",
+                      playerVars: {
+                        autoplay: 1,
+                        mute: 1,
+                        controls: 0,
+                        loop: 1,
+                        playlist: getYouTubeId(project.media),
+                      },
+                    }}
+                  />
+                ) : project.mediaType === "video" ? (
+                  <video
+                    src={project.media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",                    }}
-                  ></iframe>
+                      objectFit: "cover",
+                    }}
+                  />
                 ) : (
                   <img src={project.media} alt={project.title} />
                 )}
