@@ -1,8 +1,45 @@
+import { useEffect, useState } from "react";
 import "./HomeHero.scss";
 
 function HomeHero() {
+  const [leftNumbers, setLeftNumbers] = useState(Array(50).fill(0).map(() => Math.floor(Math.random() * 10)));
+  const [rightNumbers, setRightNumbers] = useState(Array(50).fill(0).map(() => Math.floor(Math.random() * 10)));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Randomly change one number at a time for smoother animation
+      setLeftNumbers(prev => {
+        const newNumbers = [...prev];
+        const randomIndex = Math.floor(Math.random() * newNumbers.length);
+        newNumbers[randomIndex] = Math.floor(Math.random() * 10);
+        return newNumbers;
+      });
+      
+      setRightNumbers(prev => {
+        const newNumbers = [...prev];
+        const randomIndex = Math.floor(Math.random() * newNumbers.length);
+        newNumbers[randomIndex] = Math.floor(Math.random() * 10);
+        return newNumbers;
+      });
+    }, 50); // Change every 50ms for extremely fast animation
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="hero">
+      <div className="animated-numbers left">
+        {leftNumbers.map((num, index) => (
+          <span key={index} className="number">{num}</span>
+        ))}
+      </div>
+      
+      <div className="animated-numbers right">
+        {rightNumbers.map((num, index) => (
+          <span key={index} className="number">{num}</span>
+        ))}
+      </div>
+      
       <div className="container">
         <div className="hero-content"></div>
         <div className="hero-elements">
@@ -21,7 +58,6 @@ function HomeHero() {
         </div>
       </div>
       <div className="grid-bg">
-        <img src="src\assets\hero\grid-bg.svg" alt="" />
       </div>
     </div>
   );
