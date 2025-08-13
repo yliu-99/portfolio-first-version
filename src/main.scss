@@ -160,12 +160,12 @@ a.more-btn,
 a.view-all-btn {
   position: relative;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   font-family: var(--title); // Preserved
-  font-size: 1.2rem;  
+  font-size: 1rem;  
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 1px;
   border: none;
   cursor: pointer;
   overflow: hidden;
@@ -206,7 +206,6 @@ a.view-all-btn {
   }
 
   &:hover {
-    transform: scale(1.05);
 
     &::before {
       transform: translate(90%, 0); // Slides to the left

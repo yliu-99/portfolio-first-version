@@ -1,3 +1,305 @@
+
+.projects-header {
+  h2 {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--black);
+    border-bottom: none;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 0;
+    padding: 0.8rem 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+.project-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.project-title {
+  font-family: var(--title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-left: 0.5rem;
+  letter-spacing: 0.18em;
+}
+
+.project-year-inline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--red);
+  margin-left: 0.5rem;
+}
+.project-details-box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  min-width: 600px;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.project-image-full {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: rgba(0,0,0,0.08);
+  border: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.project-image-full img,
+.project-image-full iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+  margin: 0;
+  padding: 0;
+}
+.project-image-full img,
+.project-image-full iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.project-info-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.5rem 1.2rem 0.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  z-index: 2;
+  border-top: 2px solid var(--black);
+}
+.project-info-overlay {
+  h3 {
+    font-family: var(--title);
+    font-size: 1.7rem;
+    color: var(--blue);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.18em;
+  }
+  .project-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.projects-box-layout.unified-box {
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--black);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 0;
+  padding: 0;
+  min-height: 540px;
+  max-width: 96vw;
+  width: 100%;
+}
+
+.sidebar-and-details {
+  display: flex;
+  width: 100%;;
+}
+
+.projects-box-layout.unified-box .projects-sidebar {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 2.2rem 1rem 2.2rem 1rem;
+  min-width: 300px;
+  border-right: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+.sidebar-nav-list {
+  flex: 1 1 auto;
+}
+.sidebar-view-all {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+}
+
+.projects-box-layout.unified-box .project-details-box {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-height: 340px;
+  min-width: 600px;
+  flex: 1 1 0;
+  margin: 0;
+}
+
+.projects-box-layout {
+  display: flex;
+  gap: 2.5rem;
+  min-height: 340px;
+}
+
+.projects-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--black);
+  backdrop-filter: blur(8px);
+  padding: 2rem 1.2rem 2rem 0.5rem;
+  min-width: 220px;
+  gap: 0.5rem;
+}
+
+.sidebar-title {
+  background: none;
+  border: none;
+  color: var(--black);
+  font-family: var(--title);
+  font-size: 1.1rem;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  opacity: 0.8;
+  border-left: none;
+  transition: color 0.2s, background 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}
+.sidebar-title.active {
+  color: var(--black);
+  background: rgba(0,0,0,0.09);
+  opacity: 1;
+}
+
+.project-details-box {
+  flex: 1;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--black);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 0;
+  padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  min-height: 340px;
+}
+
+.project-details-box .project-image {
+  width: 520px;
+  height: 360px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 2.5rem;
+  transition: background 0.3s;
+}
+.project-details-box .project-image img,
+.project-details-box .project-image iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.project-details-box .project-image img:hover,
+.project-details-box .project-image iframe:hover {
+  opacity: 1;
+}
+.project-details-box .project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.project-details-box h3 {
+  font-family: var(--title);
+  font-size: 1.5rem;
+  color: var(--blue);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.18em;
+}
+.project-details-box .project-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.project-details-box .chip {
+  color: var(--black);
+  font-family: var(--body);
+  font-size: 0.85rem;
+  padding: 0.22rem 0.8rem;
+  border-radius: 0;
+  text-transform: lowercase;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: none;
+  opacity: 0.8;
+  margin: 0 0.1rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.project-details-box .chip:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.project-details-box .project-description {
+  font-family: var(--body);
+  font-size: 1rem;
+  color: var(--black);
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+.project-details-box .project-year {
+  font-family: var(--title);
+  font-size: 0.95rem;
+  color: var(--red);
+  letter-spacing: 0.09em;
+  margin-top: 0.2rem;
+}
 .projects {
   width: 100vw;
   background-color: var(--white);
@@ -10,11 +312,12 @@
     
     .projects-header {
       text-align: center;
-      margin-bottom: 4rem;
       
       h2 {
         font-family: var(--title);
         font-size: 3.5rem;
+          font-weight: 700;
+          letter-spacing: 0.20rem;
         color: var(--blue);
         margin: 0;
         
@@ -38,29 +341,6 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
-      
-      .project-card {
-        display: block;
-        text-decoration: none;
-        background-color: var(--white);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          pointer-events: none;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          border-radius: 8px;
         }
         
         &::before {
@@ -74,8 +354,7 @@
         }
         
         &:hover {
-          transform: translate(1px, -0.5px);
-          animation: glitch-flicker 0.3s ease-in-out;
+        
           
           &::before,
           &::after {
@@ -122,9 +401,12 @@
           h3 {
             font-family: var(--title);
             font-size: 1.4rem;
-            color: var(--blue);
+            color: var(--black);
+            opacity: 0.8;
             margin: 0 0 1rem 0;
             transition: color 0.3s ease;
+              font-weight: 700;
+          letter-spacing: 0.2rem;
           }
           
           .project-chips {
@@ -140,7 +422,6 @@
               font-family: var(--body);
               font-size: 0.8rem;
               padding: 0.4rem 0.8rem;
-              border-radius: 20px;
               text-transform: lowercase;
               font-weight: normal;
               transition: transform 0.3s ease;
@@ -151,15 +432,10 @@
             }
           }
         }
-      }
-    }
-    
-    .view-all {
+            .view-all {
       text-align: center;
     }
-  }
-  
-  @media screen and (max-width: 834px) {
+      @media screen and (max-width: 834px) {
     padding: 3rem 0 5rem 0;
     
     .container {
@@ -214,11 +490,10 @@
       }
     }
   }
-}
+  
+      }
+    }
+    
 
-@keyframes glitch-flicker {
-  0%, 100% { transform: translate(1px, -0.5px); }
-  25% { transform: translate(-0.5px, 1px); }
-  50% { transform: translate(0.5px, -1px); }
-  75% { transform: translate(-1px, 0.5px); }
-}
+  
+

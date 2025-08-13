@@ -3,7 +3,9 @@ import profileImg from '../../../assets/about/yuhan-liu-profile-pic-red-blue.png
 
 function HomeAbout() {
   return (
+    
     <div className="about-hero-box">
+      
       <div className="about-img">
         <img
           src={profileImg}
