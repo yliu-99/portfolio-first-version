@@ -58,11 +58,45 @@ function HomeProjects() {
 
   return (
     <div className="projects">
+      {/* Title moved to top for regular horizontal orientation */}
+      <div className="projects-header-top">
+        <h2 data-text="FEATURED PROJECTS">FEATURED PROJECTS</h2>
+      </div>
+      
       <div className="projects-box-layout unified-box">
         <div className="sidebar-and-details">
           <div className="projects-header-vertical">
             <h2 data-text="FEATURED PROJECTS">FEATURED PROJECTS</h2>
           </div>
+          
+          {/* Horizontal scrollable nav for portrait mode */}
+          <nav className="projects-nav-horizontal">
+            <div className="horizontal-nav-list">
+              {featuredProjects.map((project, idx) => (
+                <div
+                  key={project.id}
+                  className={`horizontal-nav-item${
+                    selectedIdx === idx ? " active" : ""
+                  }`}
+                  onClick={() => handleNavItemClick(project.id)}
+                  onMouseEnter={() => handleNavItemMouseEnter(idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      handleNavItemClick(project.id);
+                    }
+                  }}
+                >
+                  {project.title}
+                </div>
+              ))}
+            </div>
+            <Link to="/projects" className="horizontal-view-all-btn">
+              ALL PROJECTS
+            </Link>
+          </nav>
+
           <aside 
             className="projects-sidebar"
             onMouseEnter={handleMouseEnter}
@@ -146,6 +180,13 @@ function HomeProjects() {
             </div>
           </section>
         </div>
+      </div>
+      
+      {/* ALL PROJECTS button moved outside and below the box */}
+      <div className="projects-view-all-bottom">
+        <Link to="/projects" className="view-all-btn-bottom">
+          ALL PROJECTS
+        </Link>
       </div>
     </div>
   );

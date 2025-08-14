@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Home from './components/pages/home/Home';
 import About from './components/pages/about/About';
@@ -9,6 +10,7 @@ import Graphic from './components/pages/graphic/Graphic';
 import Video from './components/pages/video/Video.jsx';
 
 import Header from './components/global/Header';
+import Hamburger from './components/global/Hamburger';
 import Footer from './components/global/Footer'; // Add your footer component
 
 // Individual project imports
@@ -29,6 +31,15 @@ library.add(fas, far, fab);
 // Animated Routes Component
 function AnimatedRoutes() {
   const location = useLocation();
+
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
@@ -78,8 +89,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Header always visible on all pages */}
-        <Header />
+        {/* Hamburger Header with responsive design */}
+        <Hamburger />
         
         {/* Main content area with page transitions */}
         <main className="main-content">

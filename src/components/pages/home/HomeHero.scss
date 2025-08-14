@@ -47,7 +47,7 @@
     top: 5%; // Matching the right controls
     left: 5%; // Mirror position of right controls
     width: 200px; // Same width as controls
-    z-index: 8;
+    z-index: 15; // Increased from 8 for higher priority
     pointer-events: none;
 
     .latest-obsession {
@@ -197,7 +197,7 @@
     top: 5%; // Moved up from 8%
     right: 5%; // Inside the hero section, not overlaying
     width: 200px; // Reduced from 280px
-    z-index: 5;
+    z-index: 15; // Increased from 5 for higher priority
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -779,6 +779,44 @@
       justify-content: center;
       text-align: center;
       position: relative;
+      
+      // Responsive scaling - scales all child elements together
+      transform-origin: center center;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+
+      // Desktop scaling (default)
+      @media screen and (max-width: 1400px) {
+        transform: scale(0.9);
+      }
+
+      @media screen and (max-width: 1200px) {
+        transform: scale(0.8);
+      }
+
+      @media screen and (max-width: 1024px) {
+        transform: scale(0.7);
+      }
+
+      @media screen and (max-width: 834px) {
+        transform: scale(0.6);
+      }
+
+      @media screen and (max-width: 768px) {
+        transform: scale(0.55);
+      }
+
+      @media screen and (max-width: 568px) {
+        transform: scale(0.45);
+      }
+
+      @media screen and (max-width: 480px) {
+        transform: scale(0.4);
+      }
+
+      @media screen and (max-width: 320px) {
+        transform: scale(0.35);
+      }
 
       div:not(:first-child) {
         position: absolute;
@@ -999,11 +1037,11 @@
 // Large tablets and small desktops (1024px and below)
 @media (max-width: 1024px) {
   .hero {
-    // Corner elements adjustments
+    // Corner elements adjustments - moved down to avoid hamburger menu blocking
     .obsession-corner,
     .corner-elements {
       width: 180px; // Slightly smaller
-      top: 3%;
+      top: 12%; // Moved down from 3% to avoid hamburger menu
 
       &.obsession-corner {
         left: 3%;
@@ -1027,19 +1065,8 @@
       }
     }
 
-    // Hero elements scaling
-    .hero-elements {
-      .circle img,
-      .moth img,
-      .animated-text img {
-        max-width: 90%;
-        max-height: 90%;
-      }
-
-      .design-text h4 {
-        font-size: 2rem;
-      }
-    }
+    // Hero elements - now uses unified scaling from parent container
+    // Individual element scaling removed - handled by transform: scale() on parent
 
     // Side labels adjustment
     .side-labels {
@@ -1114,14 +1141,7 @@
       }
     }
 
-    // Hero elements scaling
-    .hero-elements {
-      transform: scale(0.85);
-
-      .design-text h4 {
-        font-size: 1.8rem;
-      }
-    }
+    // Unified hero scaling now handled at parent container level
   }
 }
 
@@ -1211,14 +1231,7 @@
       }
     }
 
-    // Hero elements mobile scaling
-    .hero-elements {
-      transform: scale(0.7);
-
-      .design-text h4 {
-        font-size: 1.5rem;
-      }
-    }
+    // Mobile hero scaling now handled by unified container approach
   }
 }
 
@@ -1246,13 +1259,7 @@
       }
     }
 
-    .hero-elements {
-      transform: scale(0.6);
-
-      .design-text h4 {
-        font-size: 1.3rem;
-      }
-    }
+    // All hero scaling now handled by unified parent container scaling
 
     .side-labels {
       .left-label,
@@ -1266,6 +1273,16 @@
           }
         }
       }
+    }
+  }
+}
+
+// Portrait orientation on small screens - hide sidebar and obsessions
+@media (max-width: 768px) and (orientation: portrait) {
+  .hero {
+    .obsession-corner,
+    .corner-elements {
+      display: none;
     }
   }
 }

@@ -17,7 +17,74 @@
       min-height: 100vh;
     }
 
-  
+// Top title for portrait orientation only
+.projects-header-top {
+  display: none; // Hidden by default
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-family: var(--title);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    color: var(--blue);
+    margin: 0;
+    position: relative;
+    
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--red);
+      z-index: -1;
+      transform: translateX(-50%) translate(-3px, 3px);
+      opacity: 0.7;
+    }
+  }
+
+  // Show only in portrait mode
+  @media screen and (orientation: portrait) {
+    display: block;
+  }
+}
+
+// Bottom ALL PROJECTS button for portrait orientation only
+.projects-view-all-bottom {
+  display: none; // Hidden by default
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+
+  .view-all-btn-bottom {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--title);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    border: 2px solid var(--red);
+
+    &:hover {
+      background: var(--black);
+      border-color: var(--black);
+    }
+  }
+
+  // Show only in portrait mode
+  @media screen and (orientation: portrait) {
+    display: flex;
+  }
+}
+
 .projects-header {
   h2 {
     display: block;
@@ -31,6 +98,86 @@
     padding: 0.8rem 0;
     margin-bottom: 0;
     text-align: center;
+  }
+}
+
+// Horizontal navigation for portrait mode
+.projects-nav-horizontal {
+  display: none; // Hidden by default
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--black);
+  border-top: none;
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  box-sizing: border-box;
+
+  .horizontal-nav-list {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) transparent;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    .horizontal-nav-item {
+      background: none;
+      border: 1px solid var(--black);
+      color: var(--black);
+      font-family: var(--title);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.1em;
+
+      &:hover, &.active {
+        background: var(--blue);
+        color: var(--white);
+        border-color: var(--blue);
+      }
+    }
+  }
+
+  .horizontal-view-all-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--title);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+    display: none;
+
+    &:hover {
+      background: var(--black);
+    }
+  }
+
+  // Show only in portrait orientation
+  @media screen and (orientation: portrait) {
+    display: block;
   }
 }
 
@@ -146,6 +293,11 @@
   max-width: 80px;
   border-right: 2px solid var(--black);
   background: none;
+
+  // Hide only in portrait orientation
+  @media screen and (orientation: portrait) {
+    display: none;
+  }
   
   h2 {
     font-family: var(--title);
@@ -176,14 +328,7 @@
   }
 
   @media screen and (max-width: 768px) and (orientation: portrait) {
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 60px;
-    border-right: none;
-    border-bottom: 2px solid var(--black);
-    order: -1; // Move to top
+    display: none; // Hide sidebar in portrait mode - replaced by horizontal nav
   }
 }
 
@@ -211,31 +356,40 @@
     margin-top: 2.5rem;
     display: flex;
     justify-content: flex-end;
+
+    // Hide in portrait mode - replaced by horizontal nav button and bottom button
+    @media screen and (orientation: portrait) {
+      display: none;
+    }
+  }
+
+  // Responsive scaling for smaller viewports
+  @media screen and (max-width: 1200px) {
+    min-width: 450px;
+    max-width: 500px;
+    padding: 2rem 0.8rem 2rem 0.8rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    min-width: 400px;
+    max-width: 450px;
+    padding: 1.8rem 0.6rem 1.8rem 0.6rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    min-width: 350px;
+    max-width: 400px;
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  }
+
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    min-width: 300px;
+    max-width: 350px;
+    padding: 1.2rem 0.4rem 1.2rem 0.4rem;
   }
 
   @media screen and (max-width: 768px) and (orientation: portrait) {
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 2px solid var(--black);
-    flex-direction: row;
-    justify-content: center;
-    order: 1; // Position after header
-
-    .sidebar-nav-list {
-      flex-direction: row;
-      padding-top: 0;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .sidebar-view-all {
-      margin-top: 0;
-      margin-left: 1rem;
-    }
+    display: none; // Hide sidebar in portrait mode - replaced by horizontal nav
   }
 }
 
@@ -274,6 +428,33 @@
   padding: 2rem 1.2rem 2rem 0.5rem;
   min-width: 220px;
   gap: 0.5rem;
+
+  // Responsive scaling for smaller viewports
+  @media screen and (max-width: 1200px) {
+    min-width: 200px;
+    padding: 1.8rem 1rem 1.8rem 0.4rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    min-width: 180px;
+    padding: 1.5rem 0.8rem 1.5rem 0.3rem;
+    gap: 0.4rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    min-width: 160px;
+    padding: 1.2rem 0.6rem 1.2rem 0.2rem;
+    gap: 0.3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 140px;
+    padding: 1rem 0.5rem;
+  }
+
+  @media screen and (orientation: portrait) {
+    display: none; // Hide sidebar in portrait mode - replaced by horizontal nav
+  }
 }
 
  .sidebar-project-title {

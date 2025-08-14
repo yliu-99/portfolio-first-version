@@ -15,13 +15,27 @@
 }
 
 /* Type */
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     width: 100vw;
+    max-width: 100%;
     font-family: var(--body);
     background-color: var(--white);
     overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body::before,
