@@ -158,8 +158,8 @@ const curve = [
         {/* Right sidebar control elements */}
         <div className={`corner-elements ${sidebarCollapsed ? 'sidebar-collapsed' : 'sidebar-expanded'}`}>
           <div className="sidebar-header">
-            <div className="sidebar-title">CONTROLS</div>
             <div className="sidebar-toggle" onClick={() => setSidebarCollapsed(!sidebarCollapsed)}>
+              <div className="sidebar-title">CONTROLS</div>
               <span className={`triangle ${sidebarCollapsed ? 'collapsed' : 'expanded'}`}>▶</span>
             </div>
           </div>
