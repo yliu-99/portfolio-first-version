@@ -52,8 +52,8 @@ function HomeProjects() {
     setSelectedIdx(idx);
   };
 
-  const handleNavItemClick = (projectId) => {
-    window.location.href = `/project/${projectId}`;
+  const handleNavItemClick = (project) => {
+    window.location.href = `/projects/${project.slug}`;
   };
 
   return (
@@ -78,13 +78,13 @@ function HomeProjects() {
                   className={`horizontal-nav-item${
                     selectedIdx === idx ? " active" : ""
                   }`}
-                  onClick={() => handleNavItemClick(project.id)}
+                  onClick={() => handleNavItemClick(project)}
                   onMouseEnter={() => handleNavItemMouseEnter(idx)}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handleNavItemClick(project.id);
+                      handleNavItemClick(project);
                     }
                   }}
                 >
@@ -113,10 +113,10 @@ function HomeProjects() {
                   role="button"
                   aria-pressed={selectedIdx === idx}
                   onMouseEnter={() => handleNavItemMouseEnter(idx)}
-                  onClick={() => handleNavItemClick(project.id)}
+                  onClick={() => handleNavItemClick(project)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handleNavItemClick(project.id);
+                      handleNavItemClick(project);
                     }
                   }}
                 >
