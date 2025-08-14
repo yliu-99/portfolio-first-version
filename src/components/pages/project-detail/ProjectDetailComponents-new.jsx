@@ -171,6 +171,8 @@ function ProjectProcess({
   title = "Process & Development",
   children,
   sections = [],
+  showProgressBar = false,
+  showTableOfContents = false,
 }) {
   const [activeSection, setActiveSection] = React.useState(0);
 
@@ -192,17 +194,61 @@ function ProjectProcess({
         }
       });
 
-      // Reading progress bar functionality removed
-    }, []);
+      // Reading progress bar
+      if (showProgressBar) {
+        const updateProgress = () => {
+          const processSection = document.querySelector('.process-content');
+          if (!processSection) return;
+
+          const rect = processSection.getBoundingClientRect();
+          const progress = Math.max(0, Math.min(1, 
+            (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+          ));
+          
+          const progressBar = document.getElementById('reading-progress-bar');
+          if (progressBar) {
+            progressBar.style.transform = `scaleX(${progress})`;
+          }
+        };
+
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+
+        return () => window.removeEventListener('scroll', updateProgress);
+      }
+    }, [showProgressBar]);
 
     return (
       <section className="project-process enhanced">
         <div className="container">
           <h2 className="section-title">{title}</h2>
+          
+          {showTableOfContents && (
+            <div className="table-of-contents">
+              <h4>📋 In This Section</h4>
+              <nav className="toc-nav">
+                <a href="#brainstorming">Brainstorming</a>
+                <a href="#filming">Filming</a>
+                <a href="#music-production">Music Production</a>
+                <a href="#video-edit">Video Edit</a>
+                <a href="#final-touches">Final Touches</a>
+                <a href="#reflection">Reflection</a>
+              </nav>
+            </div>
+          )}
 
           <div className="process-content enhanced">
             {children}
           </div>
+
+          {showProgressBar && (
+            <div className="reading-progress">
+              <div className="progress-label">Reading Progress</div>
+              <div className="progress-track">
+                <div className="progress-bar" id="reading-progress-bar"></div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     );

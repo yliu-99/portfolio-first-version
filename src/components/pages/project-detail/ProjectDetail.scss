@@ -216,36 +216,40 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 70vh; // Give the container a substantial height
+    height: 0;
+    padding-bottom: 56.25%; // 16:9 aspect ratio for 1080p content
     min-height: 500px; // Ensure minimum height for smaller screens
     margin: 0 auto;
 
     @media screen and (max-width: 968px) {
-      height: 60vh;
+      padding-bottom: 60%; // Slightly taller on mobile
       min-height: 400px;
     }
 
     @media screen and (max-width: 568px) {
-      height: 50vh;
+      padding-bottom: 65%; // Even taller on small screens
       min-height: 300px;
     }
 
     img,
     .youtube { // Changed from iframe to .youtube for react-youtube
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%; // Force full height of the container
       object-fit: cover;
       opacity: 0;
       transition: opacity 1s ease;
-      margin: 0 auto;
 
       &.loaded {
         opacity: 1;
-        margin: 0;
-        padding: 0;
       }
 
       iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100% !important;
         height: 100% !important; // Ensure iframe fills the YouTube container
         object-fit: cover;
@@ -254,10 +258,16 @@
 
     // More specific targeting for react-youtube iframes
     > div {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       
       iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
@@ -576,11 +586,6 @@
         margin-top: 0;
       }
 
-      &:hover {
-        color: var(--blue);
-        transition: color 0.3s ease;
-      }
-
       // Add anchor link styling
       &:target {
         scroll-margin-top: 2rem;
@@ -643,7 +648,7 @@
       }
 
       &:hover::before {
-        opacity: 0.6;
+        opacity: 0; // Remove gradient background on hover
       }
       
       img {
@@ -655,6 +660,15 @@
 
       &:hover img {
         transform: scale(1.02);
+      }
+    }
+
+    // Specific styling for logo green image
+    &.logo-green-image {
+      img {
+        width: 60%;
+        margin: 0 auto;
+        display: block;
       }
     }
     

@@ -184,7 +184,6 @@ function ProjectProcess({
   children,
   sections = [],
   showProgressBar = true,
-  showTableOfContents = false,
 }) {
   const [activeSection, setActiveSection] = React.useState(0);
 
@@ -194,24 +193,20 @@ function ProjectProcess({
       <section className="project-process">
         <div className="container">
           <h2 className="section-title">{title}</h2>
-          
-          {showTableOfContents && (
-            <div className="table-of-contents">
-              <h4>In This Section</h4>
-              <nav className="toc-nav">
-                <a href="#brainstorming">Brainstorming</a>
-                <a href="#filming">Filming</a>
-                <a href="#music-production">Music Production</a>
-                <a href="#video-edit">Video Edit</a>
-                <a href="#final-touches">Final Touches</a>
-                <a href="#reflection">Reflection</a>
-              </nav>
-            </div>
-          )}
 
           <div className="process-content enhanced">
             {children}
           </div>
+
+          {showProgressBar && (
+            <div className="reading-progress">
+              <div className="progress-bar" id="reading-progress-bar"></div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
 
           {showProgressBar && (
             <div className="reading-progress">
