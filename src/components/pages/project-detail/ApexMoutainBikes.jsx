@@ -67,8 +67,11 @@ function ApexMountainBikes() {
         </div>
       } />
       
-      {/* Process Section - Custom Content */}
-      <ProjectProcess title="Process">
+      {/* Process Section - Enhanced with Better UX */}
+      <ProjectProcess 
+        title="Process" 
+        showTableOfContents={true}
+      >
         <div className="custom-process-content">
           
           <p>
