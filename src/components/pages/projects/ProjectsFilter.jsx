@@ -1,11 +1,18 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faGrip, 
+  faVideo, 
+  faPalette, 
+  faWandMagicSparkles 
+} from '@fortawesome/free-solid-svg-icons';
 
 function ProjectsFilter({ chips, activeFilter, onFilterChange }) {
   const filterCategories = [
-    { key: 'all', label: 'All Projects', icon: '⚡' },
-    { key: 'video', label: 'Video', icon: '🎬' },
-    { key: 'graphic design', label: 'Design', icon: '🎨' },
-    { key: 'motion graphics', label: 'Motion', icon: '✨' },
+    { key: 'all', label: 'All Projects', icon: faGrip },
+    { key: 'video', label: 'Video', icon: faVideo },
+    { key: 'graphic design', label: 'Design', icon: faPalette },
+    { key: 'motion graphics', label: 'Motion', icon: faWandMagicSparkles },
   ];
 
   return (
@@ -26,7 +33,7 @@ function ProjectsFilter({ chips, activeFilter, onFilterChange }) {
                 if (e.key === 'Enter') onFilterChange(category.key); // Handle Enter key for accessibility
               }}
             >
-              <span className="chip-icon">{category.icon}</span>
+              <FontAwesomeIcon icon={category.icon} className="chip-icon" />
               <span className="chip-label">{category.label}</span>
             </div>
           ))}

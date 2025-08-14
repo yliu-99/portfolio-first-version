@@ -2,6 +2,13 @@ import "./HomeProjects.scss";
 import { Link } from "react-router-dom";
 import { projectsData } from "../../../data/projectsData";
 import { useState, useEffect, useRef } from "react";
+import YouTube from 'react-youtube';
+
+// Helper to extract YouTube video ID from embed URL
+function getYouTubeId(url) {
+  const match = url.match(/(?:\/embed\/|v=)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
 
 function HomeProjects() {
   const featuredProjects = projectsData.filter(
@@ -96,31 +103,39 @@ function HomeProjects() {
                   src={featuredProjects[selectedIdx].media}
                   alt={featuredProjects[selectedIdx].title + " Project"}
                 />
-              ) : (
-                <iframe
-                  src={
-                    featuredProjects[selectedIdx].media +
-                    (featuredProjects[selectedIdx].media.includes("youtube.com")
-                      ? "&autoplay=1&mute=1&controls=0&start=30"
-                      : "?autoplay=1&muted=1&t=30")
-                  }
-                  title={featuredProjects[selectedIdx].title + " Video"}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+              ) : getYouTubeId(featuredProjects[selectedIdx].media) ? (
+                <YouTube
+                  videoId={getYouTubeId(featuredProjects[selectedIdx].media)}
+                  opts={{
+                    width: '100%',
+                    height: '100%',
+                    playerVars: {
+                      autoplay: 1,
+                      mute: 1,
+                      controls: 0,
+                      loop: 1,
+                      start: 10,
+                      playlist: getYouTubeId(featuredProjects[selectedIdx].media),
+                      modestbranding: 1,
+                      rel: 0,
+                      showinfo: 0
+                    },
+                  }}
+                  className="youtube-player"
                   style={{ width: "100%", height: "100%" }}
-                ></iframe>
+                />
+              ) : (
+                <video
+                  src={featuredProjects[selectedIdx].media}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%", height: "100%" }}
+                />
               )}
             </div>
             <div className="project-info-overlay">
-              <div className="project-title-row">
-                <span className="project-title">
-                  {featuredProjects[selectedIdx].title}
-                </span>
-                <span className="project-year-inline">
-                  {featuredProjects[selectedIdx].year}
-                </span>
-              </div>
               <div className="project-chips">
                 {featuredProjects[selectedIdx].chips.map((chip, idx) => (
                   <span className="chip" key={idx}>

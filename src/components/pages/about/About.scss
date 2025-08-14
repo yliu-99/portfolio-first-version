@@ -2,6 +2,7 @@
 .about {
   width: 100%;
   min-height: 100vh;
+    transform: translate(0,-7rem);
 
   // Column layout instead of row
   display: flex;
@@ -12,20 +13,19 @@
     margin: 0;
   }
 
-  // Base typography inspired by moodboard
+  // Base h2 styling for all main titles
   h2 {
     font-family: var(--title);
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 900;
     text-transform: uppercase;
-    line-height: 0.9;
+    line-height: 1.1;
+    letter-spacing: 0.2em;
     margin: 0;
+    position: relative;
 
-    // Remove centered alignment and decorative elements
-    text-align: left;
-
-    &::after {
-      display: none;
+    @media (max-width: 768px) {
+      font-size: clamp(1.8rem, 4vw, 2rem);
     }
   }
 
@@ -45,77 +45,177 @@
   }
 }
 
-// Overview.scss - Hero-style overview with bold layout
+// Overview.scss - HomeProjects-inspired layout with image on left, content on right
 .about-overview {
   background-color: var(--white);
-  padding: 8rem 0;
+  padding: 0 ;
   position: relative;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 
-  // Remove background gradients for solid color approach
-  &::before {
-    display: none;
-  }
 
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 6rem;
-    align-items: center;
+  // Black background filling space from section to top of viewport
 
-    @media screen and (max-width: 968px) {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      text-align: center;
-    }
-  }
-
-  img {
+  .overview-layout {
+    display: flex;
     width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    height: 100%;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid var(--black);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 0;
+  }
 
-    // Remove gradient border for cleaner look
-    border: none;
-    background: none;
+  .overview-image-section {
+    width: 45vw;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-right: 2px solid var(--black);
 
-    @media screen and (max-width: 968px) {
-      max-width: 300px;
-      margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
-  .content {
-    h2 {
-      color: var(--black);
-      margin-bottom: 3rem;
-      position: relative;
+  .overview-content-section {
+    width: 55vw;
+    height: 100%;
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
 
-      // Add bold accent element
-      &::before {
-        content: "";
-        position: absolute;
-        left: -2rem;
-        top: 0;
-        width: 8px;
-        height: 100%;
-        background-color: var(--red);
+    .content {
+      width: 100%;
+      max-width: 800px;
 
-        @media screen and (max-width: 968px) {
-          display: none;
+      .section-title-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: fit-content;
+        margin: 0 0 2rem 0;
+        position: relative;
+        z-index: 10;
+        background: rgba(255,255,255,0.95);
+        border: 2px solid var(--black);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 0;
+        padding: 1rem 2rem;
+
+        // Floating animated triangle
+        &::after {
+          content: "";
+          position: absolute;
+          left: -30px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-left: 15px solid var(--red);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          animation: float-triangle 2s ease-in-out infinite;
+          z-index: 11;
+        }
+
+        h2 {
+          color: var(--black);
+
+          &::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--red);
+            z-index: -1;
+            transform: translate(-3px, 3px);
+            opacity: 0.7;
+          }
+        }
+      }
+
+      p {
+        font-family: var(--body);
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.6;
+        color: var(--black);
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
+  }
 
-    p {
-      color: var(--black);
-      max-width: none;
-      text-align: left;
+  // Responsive breakpoints
+  @media screen and (max-width: 1024px) {
+    padding: 3rem 0;
+    height: auto;
+    min-height: 100vh;
 
-      @media screen and (max-width: 968px) {
+    .section-title-box {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-bottom: 2rem;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .overview-layout {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .overview-image-section {
+      width: 100%;
+      height: 50vh;
+      border-right: none;
+      border-bottom: 2px solid var(--black);
+
+      img {
+        object-position: top center;
+      }
+    }
+
+    .overview-content-section {
+      width: 100%;
+      height: auto;
+      padding: 2rem 3rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 0;
+
+    .section-title-box {
+      margin-bottom: 1.5rem;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .overview-content-section {
+      padding: 2rem;
+    }
+
+    .content {
+      h3 {
         text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        text-align: left;
       }
     }
   }
@@ -125,67 +225,143 @@
 .values {
   background-color: var(--blue);
   color: var(--white);
-  padding: 8rem 0;
+  padding: 0;
   position: relative;
-
-  // Remove gradient background and decorative elements
-  background: var(--blue);
   width: 100vw;
+  margin-left: calc(-50vw + 50%);
 
-  &::before,
-  &::after {
-    display: none;
+  .values-container {
+    background: var(--blue);
+    border: 2px solid var(--black);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 0;
+    padding: 6rem 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
   }
 
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
 
     @media screen and (max-width: 968px) {
-      grid-template-columns: 1fr;
-      gap: 4rem;
+      padding: 0 1rem;
     }
   }
 
   .values-content {
     h2 {
       color: var(--white);
-      margin-bottom: 4rem;
-      position: relative;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
 
-      // Bold accent bar
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -1rem;
-        left: 0;
-        width: 100px;
-        height: 6px;
-        background-color: var(--red);
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+
+      @media screen and (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
     }
 
-    .value-item {
-      margin-bottom: 3rem;
+    .value-box {
+      perspective: 1000px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      height: 500px;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+
+      &.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front, .flip-card-back {
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid var(--white);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 0;
+        padding: 2rem;
+        box-sizing: border-box;
+      }
+
+      .flip-card-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateY(180deg);
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+          max-height: 100%;
+          object-fit: contain;
+          border-radius: 0;
+        }
+      }
 
       h3 {
         color: var(--white);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        font-family: var(--title);
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        position: relative;
 
-        // Removed counter functionality
-        &::before {
-          display: none;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -0.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 40px;
+          height: 3px;
+          background-color: var(--red);
         }
       }
 
       p {
         color: var(--white);
         opacity: 0.9;
+        line-height: 1.6;
+        text-align: center;
+        margin: 0;
       }
     }
   }
@@ -240,19 +416,7 @@
     h2 {
       color: var(--black);
       margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
-
-      // Bold underline instead of centered line
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -1rem;
-        left: 0;
-        right: 0;
-        height: 8px;
-        background-color: var(--red);
-      }
+      text-align: center;
     }
 
     .intro {
@@ -266,11 +430,10 @@
 
   .goals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 4rem;
 
     @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
       gap: 3rem;
     }
   }
@@ -294,7 +457,7 @@
       font-size: 2rem;
       font-weight: 900;
       padding: 0.5rem 1.5rem;
-      border-radius: 4px;
+      border-radius: 0;
     }
 
     h3 {
@@ -375,5 +538,17 @@
         padding: 0.4rem 1rem;
       }
     }
+  }
+}
+
+// Animation for floating triangle
+@keyframes float-triangle {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50%) translateX(8px);
+    opacity: 1;
   }
 }

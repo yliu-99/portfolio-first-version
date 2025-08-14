@@ -3,7 +3,10 @@ footer {
     display: flex;
     flex-direction: column;
     h4 {
-        color: var(--blue);
+        color: var(--white);
+    }
+    .footer-content{
+        background-color: var(--red);
     }
     .container {
         display: flex;
@@ -39,11 +42,11 @@ footer {
         transition: color 0.3s ease;
         .email-link {
             text-decoration: none;
-            color: var(--blue);
+            color: var(--white);
             font-family: var(--title);
         }
         .email-link:hover {
-            color: var(--red);
+            opacity: 0.8;
         }
     }
 }

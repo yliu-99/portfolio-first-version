@@ -1,10 +1,18 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import ProjectsCard from './ProjectsCard';
 
 function ProjectsGrid({ projects, isLoading }) {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section className="projects-grid-section">
-      <div className="container">
         {isLoading && (
           <div className="loading-overlay">
             <div className="loading-spinner"></div>
@@ -26,7 +34,12 @@ function ProjectsGrid({ projects, isLoading }) {
             <p>Try selecting a different filter category</p>
           </div>
         )}
-      </div>
+        <div className="back-to-top-container">
+          <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
+            <FontAwesomeIcon icon={faChevronUp} className="back-to-top-icon" />
+            <span className="back-to-top-text">BACK TO TOP</span>
+          </button>
+        </div>
     </section>
   );
 }

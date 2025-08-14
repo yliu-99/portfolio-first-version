@@ -1,51 +1,65 @@
 import { useState } from 'react';
+import YouTube from 'react-youtube';
+
+// Helper to extract YouTube video ID from embed URL
+function getYouTubeId(url) {
+  const match = url.match(/(?:\/embed\/|v=)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
 
 function ProjectsCard({ project, index, variant = 'default' }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  const getBackgroundPattern = (index) => {
-    const patterns = ['dots', 'lines', 'grid', 'waves'];
-    return patterns[index % patterns.length];
-  };
-
-  const getAccentColor = (index) => {
-    return index % 2 === 0 ? 'blue' : 'red';
-  };
+  const [mediaLoaded, setMediaLoaded] = useState(false);
 
   return (
     <div 
-      className={`project-card project-card--${variant} pattern--${getBackgroundPattern(index)} accent--${getAccentColor(index)}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`project-card project-card--${variant}`}
       style={{ '--animation-delay': `${index * 0.1}s` }}
     >
-      <div className="card-background"></div>
-      
       <a href={`/projects/${project.slug}`} className="card-link">
         <div className="project-media">
-          {project.type === 'video' ? (
-            <iframe
-              src={`${project.media}?autoplay=1&mute=1&start=30`}
-              title={project.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className={imageLoaded ? 'loaded' : ''}
-              onLoad={() => setImageLoaded(true)}
+          {project.type === 'video' && getYouTubeId(project.media) ? (
+            <YouTube
+              videoId={getYouTubeId(project.media)}
+              opts={{
+                width: '100%',
+                height: '100%',
+                playerVars: {
+                  autoplay: 1,
+                  mute: 1,
+                  controls: 0,
+                  loop: 1,
+                  start: 10,
+                  playlist: getYouTubeId(project.media),
+                  modestbranding: 1,
+                  rel: 0,
+                  showinfo: 0
+                },
+              }}
+              className={mediaLoaded ? 'loaded youtube-player' : 'youtube-player'}
+              onReady={() => setMediaLoaded(true)}
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'cover',
-                pointerEvents: 'none' // Prevent interaction with play button
+                pointerEvents: 'none'
               }}
-            ></iframe>
+            />
+          ) : project.type === 'video' ? (
+            <video
+              src={project.media}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className={mediaLoaded ? 'loaded' : ''}
+              onLoadedData={() => setMediaLoaded(true)}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           ) : (
             <img 
               src={project.media} 
               alt={project.title}
-              onLoad={() => setImageLoaded(true)}
-              className={imageLoaded ? 'loaded' : ''}
+              onLoad={() => setMediaLoaded(true)}
+              className={mediaLoaded ? 'loaded' : ''}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           )}
@@ -55,16 +69,12 @@ function ProjectsCard({ project, index, variant = 'default' }) {
         <div className="project-content">
           <div className="project-header">
             <h3 className="project-title">{project.title}</h3>
-            {variant === 'detailed' && (
-              <div className="project-year">{project.year || '2024'}</div>
-            )}
+            <div className="project-year">{project.year || '2024'}</div>
           </div>
           
-          {variant === 'detailed' && (
-            <p className="project-description">
-              {project.description || 'A creative project showcasing multidisciplinary design skills.'}
-            </p>
-          )}
+          <div className="project-description">
+            {project.description || 'A creative project showcasing multidisciplinary design skills.'}
+          </div>
           
           <div className="project-chips">
             {project.chips.map((chip, chipIndex) => (
@@ -81,7 +91,7 @@ function ProjectsCard({ project, index, variant = 'default' }) {
           {variant === 'detailed' && (
             <div className="project-meta">
               <span className="view-project">
-                View Project →
+                View Project
               </span>
             </div>
           )}

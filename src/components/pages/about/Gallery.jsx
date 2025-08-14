@@ -23,21 +23,24 @@ function Gallery() {
   return (
     <div className="gallery">
       <div className="container">
-        <h2>Gallery</h2>
-        <div className="carousel">
-          <div className="prev-btn" onClick={handlePrev}></div>
-          <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            className="carousel-image"
-          />
-          <div className="next-btn" onClick={handleNext}></div>
-          <div className="image-counter">
-            {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+        <div className="gallery-title-section">
+          <div className="gallery-title-box">
+            <h2>Gallery</h2>
           </div>
         </div>
-        <div className="gallery-description">
-          A curated collection of moments and inspirations that shape my creative journey. Each image tells a story of discovery, growth, and the beauty found in everyday experiences.
+        <div className="gallery-media-section">
+          <div className="carousel">
+            <div className="prev-btn" onClick={handlePrev}></div>
+            <img
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt}
+              className="carousel-image"
+            />
+            <div className="next-btn" onClick={handleNext}></div>
+            <div className="image-counter">
+              {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+            </div>
+          </div>
         </div>
       </div>
     </div>

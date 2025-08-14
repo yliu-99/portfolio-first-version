@@ -340,7 +340,7 @@
         .energy-bar {
           flex: 1;
           height: 12px;
-          background: linear-gradient(90deg, var(--blue) 0%, var(--red) 100%);
+          background: var(--blue);
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
           transition: width 0.5s cubic-bezier(0.4, 2, 0.3, 1);

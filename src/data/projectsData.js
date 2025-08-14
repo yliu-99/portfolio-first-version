@@ -8,6 +8,54 @@ const mythbustersVid = "https://www.youtube.com/embed/ioG4kkKj6ZM?si=ymFZFlZC33j
 
 export const projectsData = [
   {
+    id: 'mythbusters',
+    title: 'MYTHBUSTERS',
+    slug: 'mythbusters',
+    type: 'video',
+    media: mythbustersVid,
+    year: 'Jul 2025',
+    description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
+    chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],
+    category: 'motion',
+    featured: true
+  },
+  {
+    id: 'thrash',
+    title: 'THRASH! HAIR COLOUR',
+    slug: 'thrash-hair',
+    type: 'image',
+    media: thrashHairImage,
+    year: 'Apr 2025',
+    description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
+    chips: ['graphic design', 'illustrator', 'product design', 'branding'],
+    category: 'design',
+    featured: false
+  },
+  {
+    id: 'horizons',
+    title: 'TRUE HORIZONS',
+    slug: 'true-horizons',
+    type: 'video',
+    media: trueHorizonsVid,
+    year: 'Apr 2025',
+    description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
+    chips: ['video', 'storytelling', 'cinematography', 'editing'],
+    category: 'video',
+    featured: false
+  },
+  {
+    id: 'apex',
+    title: 'APEX MOUNTAIN BIKES',
+    slug: 'apex-mountain-bikes',
+    type: 'video',
+    media:  apexMountainBikesVid,
+    year: 'Feb 2025',
+    description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
+    chips: ['video', 'music production', 'storytelling', 'cinematography'],
+    category: 'video',
+    featured: true
+  },
+  {
     id: 'fable',
     title: 'FABLE FRAGRANCES',
     slug: 'fable-fragrances',
@@ -29,54 +77,6 @@ export const projectsData = [
     description: 'Film festival rebrand focusing on bold typography and horror-inspired visual elements that capture the essence of contemporary horror cinema.',
     chips: ['graphic design', 'branding', 'redesign', 'typography'],
     category: 'design',
-    featured: true
-  },
-  {
-    id: 'thrash',
-    title: 'THRASH! HAIR COLOUR',
-    slug: 'thrash-hair',
-    type: 'image',
-    media: thrashHairImage,
-    year: 'Apr 2025',
-    description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
-    chips: ['graphic design', 'illustrator', 'product design', 'branding'],
-    category: 'design',
-    featured: false
-  },
-  {
-    id: 'apex',
-    title: 'APEX MOUNTAIN BIKES',
-    slug: 'apex-mountain-bikes',
-    type: 'video',
-    media:  apexMountainBikesVid,
-    year: 'Feb 2025',
-    description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
-    chips: ['video', 'music production', 'storytelling', 'cinematography'],
-    category: 'video',
-    featured: true
-  },
-  {
-    id: 'horizons',
-    title: 'TRUE HORIZONS',
-    slug: 'true-horizons',
-    type: 'video',
-    media: trueHorizonsVid,
-    year: 'Apr 2025',
-    description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
-    chips: ['video', 'storytelling', 'cinematography', 'editing'],
-    category: 'video',
-    featured: false
-  },
-  {
-    id: 'mythbusters',
-    title: 'MYTHBUSTERS',
-    slug: 'mythbusters',
-    type: 'video',
-    media: mythbustersVid,
-    year: 'Jul 2025',
-    description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
-    chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],
-    category: 'motion',
     featured: true
   }
 ];

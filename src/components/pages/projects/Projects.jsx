@@ -1,7 +1,5 @@
 // Projects.jsx - Main Projects Page
 import React, { useState, useEffect } from 'react';
-import ProjectsHero from './ProjectsHero';
-import ProjectsStats from './ProjectsStats';
 import ProjectsFilter from './ProjectsFilter';  
 import ProjectsGrid from './ProjectsGrid';
 import { projectsData } from '../../../data/projectsData.js';
@@ -35,8 +33,6 @@ function Projects() {
 
   return (
     <div className="projects-page">
-      <ProjectsHero />
-      <ProjectsStats projects={projectsData} />
       <ProjectsFilter 
         chips={allChips}
         activeFilter={activeFilter}

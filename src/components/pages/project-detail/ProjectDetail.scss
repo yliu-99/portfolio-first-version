@@ -33,8 +33,8 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: linear-gradient(45deg, var(--blue), var(--red));
-      border-radius: 2px;
+      background: var(--blue);
+      border-radius: 0;
     }
   }
 }
@@ -50,15 +50,15 @@
   overflow: hidden;
 
   &.hero-bg--blue {
-    background: linear-gradient(135deg, var(--blue) 0%, rgba(54, 57, 251, 0.8) 100%);
+    background: var(--blue);
   }
 
   &.hero-bg--red {
-    background: linear-gradient(135deg, var(--red) 0%, rgba(233, 26, 20, 0.8) 100%);
+    background: var(--red);
   }
 
   &.hero-bg--gradient {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--red) 50%, var(--black) 100%);
+    background: var(--black);
   }
 
   .hero-content {
@@ -93,7 +93,7 @@
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
         padding: 0.5rem 1rem;
-        border-radius: 25px;
+        border-radius: 0;
         font-family: var(--title);
         font-size: 0.9rem;
         text-transform: uppercase;
@@ -146,7 +146,7 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
         color: var(--white);
         padding: 0.6rem 1.2rem;
-        border-radius: 25px;
+        border-radius: 0;
         font-family: var(--body);
         font-size: 0.9rem;
         text-transform: lowercase;
@@ -201,8 +201,8 @@
       left: -4px;
       right: -4px;
       bottom: -4px;
-      background: linear-gradient(45deg, var(--blue), var(--red), var(--blue));
-      border-radius: 24px;
+      background: var(--blue);
+      border-radius: 0;
       z-index: -1;
       opacity: 0.6;
       filter: blur(8px);
@@ -251,7 +251,7 @@
   .goal-card {
     background: var(--white);
     border: 2px solid transparent;
-    border-radius: 16px;
+    border-radius: 0;
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
@@ -260,13 +260,14 @@
     animation: fade-in-up 0.6s ease-out forwards;
     animation-delay: var(--card-delay);
     
-    // Gradient border effect
-    background: linear-gradient(var(--white), var(--white)) padding-box,
-                linear-gradient(45deg, var(--blue), var(--red)) border-box;
+    // Solid border effect
+    background: var(--white);
+    border: 2px solid var(--blue);
     
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: var(--black);
     }
     
     .card-icon {
@@ -306,7 +307,7 @@
 // =============================================================================
 .project-process {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #f8f9fa;
   
   .process-content {
     max-width: 900px;
@@ -381,7 +382,7 @@
     
     .section-image, .section-video {
       margin: 2rem 0;
-      border-radius: 16px;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
       
@@ -431,7 +432,7 @@
     display: block;
     text-decoration: none;
     color: inherit;
-    border-radius: 16px;
+    border-radius: 0;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
