@@ -28,7 +28,7 @@ header {
       position: absolute;
       z-index: -2;
       width: 100%;
-      height: 15rem;
+      height: 12rem;
       backdrop-filter: blur(15px);
       background-color: rgba(225, 229, 222, 1);
       mask-image: -webkit-linear-gradient(
@@ -53,6 +53,7 @@ header {
       font-size: 2rem;
       text-decoration: none;
       transition: color 0.3s ease;
+
     }
 
     a:hover {
@@ -107,7 +108,7 @@ header {
       }
       a:not(.middle):hover {
         animation: glitch-flicker 0.4s ease-in-out;
-        text-shadow: -5px 0px 0px rgba(233, 26, 20, 0.7);
+        text-shadow: 2px 2px 0px rgba(233, 26, 20, 0.7);
       }
 
       @keyframes glitch-flicker {
