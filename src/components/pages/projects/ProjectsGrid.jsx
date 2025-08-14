@@ -35,9 +35,8 @@ function ProjectsGrid({ projects, isLoading }) {
           </div>
         )}
         <div className="back-to-top-container">
-          <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
-            <FontAwesomeIcon icon={faChevronUp} className="back-to-top-icon" />
-            <span className="back-to-top-text">BACK TO TOP</span>
+          <button className="back-to-top" onClick={scrollToTop}>
+            Back to Top
           </button>
         </div>
     </section>
