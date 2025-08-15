@@ -51,7 +51,7 @@ function ApexMountainBikes() {
         title="APEX MOUNTAIN BIKES"
         category="Video Production"
         year="Feb 2025"
-        description="The goal of this group project was to write, film, produce music, and edit a 2-minute talking head commercial for a fictional mountain bike company. We used the 3-point lighting technique and incorporated provided mountain bike footage. This project was created for the Video Storytelling (MDIA 2565) course during Term 2 of the New Media Design and Web Development Diploma at BCIT."
+        description="A talking head commercial for a fictional mountain bike company, using provided mountain biking footage, showcasing our team's skills in video production, lighting techniques,music creation, and storytelling."
         media={apexMoutainBikesVid}
         mediaType="video"
         chips={['video', 'music production', 'storytelling','commercial']}

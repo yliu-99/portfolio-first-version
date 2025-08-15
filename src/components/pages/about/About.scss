@@ -37,11 +37,25 @@
     margin: 0 0 1rem 0;
   }
 
-  p {
+  p, li {
     font-family: var(--body);
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     line-height: 1.6;
     margin: 0 0 1.5rem 0;
+  }
+
+  // Additional styling for lists
+  ul, ol {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.5rem;
+
+    li {
+      margin: 0 0 0.5rem 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -142,7 +156,7 @@
         }
       }
 
-      p {
+      p, li {
         font-family: var(--body);
         font-size: clamp(1rem, 2.5vw, 1.2rem);
         line-height: 1.6;
@@ -356,7 +370,7 @@
         }
       }
 
-      p {
+      p, li {
         color: var(--white);
         opacity: 0.9;
         line-height: 1.6;
@@ -474,7 +488,7 @@
       }
     }
 
-    p {
+    p, li {
       color: var(--black);
       margin: 0;
 

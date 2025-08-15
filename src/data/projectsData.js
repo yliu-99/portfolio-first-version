@@ -14,7 +14,7 @@ export const projectsData = [
     type: 'video',
     media: mythbustersVid,
     year: 'Jul 2025',
-    description: 'Motion graphics and sound design work for educational content, combining scientific accuracy with engaging visual storytelling.',
+    description: 'Motion graphics and sound design work for a mythbusters style video. This storytelling focuses on debunking my biggest personal myth -- "perfectionism".',
     chips: ['motion graphics', 'sound design', 'storytelling', 'animation'],
     category: 'motion',
     featured: true
@@ -26,7 +26,7 @@ export const projectsData = [
     type: 'image',
     media: thrashHairImage,
     year: 'Apr 2025',
-    description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design principles.',
+    description: 'Edgy product design and branding for an alternative hair color brand, combining punk aesthetics with modern design.',
     chips: ['graphic design', 'illustrator', 'product design', 'branding'],
     category: 'design',
     featured: false
@@ -38,8 +38,8 @@ export const projectsData = [
     type: 'video',
     media: trueHorizonsVid,
     year: 'Apr 2025',
-    description: 'An emotional narrative piece exploring themes of discovery and personal growth through cinematic storytelling and visual metaphor.',
-    chips: ['video', 'storytelling', 'cinematography', 'editing'],
+    description: 'A narrative commercial exploring the relationship of two long distance friends, emphasizing the value of personal connection over external/online validation.',
+    chips: ['video', 'storytelling', 'talking head', 'editing'],
     category: 'video',
     featured: false
   },
@@ -50,8 +50,8 @@ export const projectsData = [
     type: 'video',
     media:  apexMountainBikesVid,
     year: 'Feb 2025',
-    description: 'A dynamic commercial showcasing mountain biking culture, featuring original music production and immersive storytelling techniques.',
-    chips: ['video', 'music production', 'storytelling', 'cinematography'],
+    description: 'A dynamic talking head commercial, using an interview format and featuring original music production.',
+    chips: ['video', 'music production', 'storytelling', 'commercial'],
     category: 'video',
     featured: true
   },
@@ -62,7 +62,7 @@ export const projectsData = [
     type: 'image',
     media: fableFragrancesImage,
     year: 'Dec 2024',
-    description: 'A complete branding and packaging design project for a luxury fragrance line, focusing on mystical and enchanting visual storytelling.',
+    description: 'A complete branding and packaging design project for a niche fragrance line, focusing on mystical and enchanting visual storytelling.',
     chips: ['graphic design', 'photoshop', 'product design', 'branding'],
     category: 'design',
     featured: true
@@ -81,7 +81,6 @@ export const projectsData = [
   }
 ];
 
-// Helper functions for filtering and categorizing
 export const getProjectsByCategory = (category) => {
   return projectsData.filter(project => project.category === category);
 };
@@ -117,6 +116,6 @@ export const getProjectStats = () => {
       motion: getProjectsByCategory('motion').length
     },
     featured: getFeaturedProjects().length,
-    mostUsedChips: getAllChips().slice(0, 5) // Top 5 most common skills
+    mostUsedChips: getAllChips().slice(0, 5)
   };
 };

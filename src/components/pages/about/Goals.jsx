@@ -12,30 +12,52 @@ function Goals() {
         <div className="goals-grid">
           <div className="goal-item">
             <h3>Career Growth & Creative Fulfillment</h3>
-            <p>
-              I'm working as a designer at a local start-up where I feel confident in
-              what I create and excited to share my work with others. I'm taking on
-              projects that challenge and fulfill me, while continuing to learn new
-              skills that I can use and showcase.
-            </p>
+            <ul>
+              <li>
+                Apply skills across branding, UI/UX, illustration, and
+                storytelling at a local start-up.
+              </li>
+              <li>
+                Take on projects that push my range and creative boundaries.
+              </li>
+              <li>
+                Learn and adopt new tools, methods, and mediums to expand my
+                skill set.
+              </li>
+            </ul>
           </div>
           <div className="goal-item">
             <h3>Personal Well-Being & Balance</h3>
-            <p>
-              I've built a stable lifestyle that gives me time to spend with the
-              people I care about. I've developed a routine that supports both my
-              physical and mental health, and I've become more confident in setting
-              boundaries and honoring my own needs.
-            </p>
+            <ul>
+              <li>
+                Apply skills across branding, UI/UX, illustration, and
+                storytelling at a local start-up.
+              </li>
+              <li>
+                Take on projects that push my range and creative boundaries.
+              </li>
+              <li>
+                Learn and adopt new tools, methods, and mediums to expand my
+                skill set.
+              </li>
+            </ul>
           </div>
           <div className="goal-item">
             <h3>Community & Connection</h3>
-            <p>
-              I feel more connected to the local communities in Vancouver and have
-              grown my network meaningfully. I regularly make time to reconnect with
-              nature and continue exploring my passion for music—maybe even by playing
-              at open mics again.
-            </p>
+            <ul>
+              <li>
+                Engage with Vancouver’s creative/design communities through
+                events and collaborations.
+              </li>
+              <li>
+                Reconnect with nature regularly to fuel perspective and
+                inspiration.
+              </li>
+              <li>
+                Explore music as personal expression—e.g., playing at local open
+                mics.
+              </li>
+            </ul>
           </div>
         </div>
       </div>

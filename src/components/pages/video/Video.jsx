@@ -43,7 +43,7 @@ function Video() {
           <div className="header-content">
             <h1 className="discipline-title">VIDEO & MOTION GRAPHICS</h1>
             <p className="discipline-description">
-              Cinematic storytelling and motion graphics that bring narratives to life through movement, sound, and visual innovation.
+              Having studied music and theatre previously, I have a passion for creating compelling stories through video and motion graphics. This section showcases my work in video production, animation, storytelling, and sound design where I blend creativity with technical skills to produce engaging content.
             </p>
           </div>
         </div>

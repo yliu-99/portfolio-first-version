@@ -41,7 +41,7 @@ function Graphic() {
           <div className="header-content">
             <h1 className="discipline-title">GRAPHIC DESIGN</h1>
             <p className="discipline-description">
-              Visual storytelling through design, typography, and branding projects that combine creativity with strategic thinking.
+              I love design that is bold, impactful, and tells a story. My graphic design projects range from branding and print design to digital illustrations and marketing materials. Each project is crafted with attention to detail and a focus on visual storytelling.
             </p>
           </div>
         </div>
