@@ -7,7 +7,7 @@ const defaultSEO = {
   siteName: "Yuhan Liu Portfolio",
   siteUrl: "https://yliu-99.github.io/portfolio-first-version",
   twitterHandle: "@yuhan_liu_",
-  defaultTitle: "Graphic Design Vancouver, Yuhan Liu BCIT New Media Portfolio",
+  defaultTitle: "Yuhan Liu Portfolio | Vancouver Multidisciplinary Designer",
   defaultDescription: "Vancouver-based graphic designer and multimedia artist Yuhan Liu showcases creative projects in branding, web design, and visual storytelling. BCIT New Media graduate specializing in innovative design solutions.",
   defaultKeywords: "graphic design vancouver, yuhan liu, bcit new media, portfolio, multimedia artist, vancouver designer, branding design, web design, visual storytelling, creative portfolio, new media design, digital design vancouver"
 };
