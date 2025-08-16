@@ -5,7 +5,7 @@ export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Yuhan Liu",
-  "jobTitle": "Graphic Designer & Multimedia Artist",
+  "jobTitle": "Multidisciplinary Designer",
   "url": defaultSEO.siteUrl,
   "sameAs": [
     "https://www.linkedin.com/in/yuhan-liu-1a571524b/",
@@ -42,7 +42,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Yuhan Liu Design Portfolio",
-  "description": "Professional graphic design and multimedia services in Vancouver. Specializing in branding, web design, and creative visual solutions.",
+  "description": "Professional graphic design and multimedia services in Vancouver. Specializing in graphic, motion, and sound design.",
   "url": defaultSEO.siteUrl,
   "provider": personSchema,
   "areaServed": {

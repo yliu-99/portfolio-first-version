@@ -8,8 +8,8 @@ const defaultSEO = {
   siteUrl: "https://yliu-99.github.io/portfolio-first-version",
   twitterHandle: "@yuhan_liu_",
   defaultTitle: "Yuhan Liu Portfolio | Vancouver Multidisciplinary Designer",
-  defaultDescription: "Vancouver-based graphic designer and multimedia artist Yuhan Liu showcases creative projects in branding, web design, and visual storytelling. BCIT New Media graduate specializing in innovative design solutions.",
-  defaultKeywords: "graphic design vancouver, yuhan liu, bcit new media, portfolio, multimedia artist, vancouver designer, branding design, web design, visual storytelling, creative portfolio, new media design, digital design vancouver"
+  defaultDescription: "Vancouver-based multidisciplinary designer Yuhan Liu showcases creative projects in branding, web design, and visual storytelling. BCIT New Media graduate specializing in innovative design solutions.",
+  defaultKeywords: "graphic design vancouver, yuhan liu, bcit new media, portfolio, video artist, vancouver designer, branding design, web design, visual storytelling, creative portfolio, new media design, digital design vancouver"
 };
 
 function SEO({
@@ -23,8 +23,8 @@ function SEO({
   noIndex = false,
   children
 }) {
-  // Construct full title using recommended format
-  const fullTitle = title ? `${title} | ${defaultSEO.siteName}` : defaultSEO.defaultTitle;
+  // Always use the default title for browser tab and search results
+  const fullTitle = defaultSEO.defaultTitle;
   
   // Combine default and custom keywords
   const allKeywords = keywords 

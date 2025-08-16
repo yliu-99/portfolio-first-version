@@ -38,6 +38,26 @@ body {
     position: relative;
     left: 0;
     right: 0;
+    
+    // Add padding for mobile header when hamburger menu is active
+    @media screen and (max-width: 1024px) {
+        padding-top: 6.2rem; // Red bar (1rem) + Mobile nav padding (2rem) + Logo height (3rem) + border (2px)
+    }
+    
+    @media screen and (max-width: 568px) {
+        padding-top: 5.1rem; // Red bar (0.8rem) + Mobile nav padding (1.6rem) + Logo height (2.5rem) + border (2px)
+    }
+}
+
+// Remove mobile header padding specifically for home page
+.home-page {
+    @media screen and (max-width: 1024px) {
+        margin-top: -6.2rem; // Negative margin to offset body padding
+    }
+    
+    @media screen and (max-width: 568px) {
+        margin-top: -5.1rem; // Negative margin to offset body padding
+    }
 }
 
 * {

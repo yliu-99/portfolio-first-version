@@ -57,6 +57,21 @@ function HomeProjects() {
     navigate(`/projects/${project.slug}`);
   };
 
+  const handleMediaClick = () => {
+    // Navigate to project details when media is clicked (mobile interaction)
+    navigate(`/projects/${featuredProjects[selectedIdx].slug}`);
+  };
+
+  const handleNavItemSelect = (idx) => {
+    // For mobile: just change selection, don't navigate
+    setSelectedIdx(idx);
+  };
+
+  const handleNavItemDesktopClick = (project, idx) => {
+    // For desktop: navigate immediately
+    navigate(`/projects/${project.slug}`);
+  };
+
   return (
     <div className="projects">
       {/* Title moved to top for regular horizontal orientation */}
@@ -79,13 +94,13 @@ function HomeProjects() {
                   className={`horizontal-nav-item${
                     selectedIdx === idx ? " active" : ""
                   }`}
-                  onClick={() => handleNavItemClick(project)}
+                  onClick={() => handleNavItemSelect(idx)}
                   onMouseEnter={() => handleNavItemMouseEnter(idx)}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handleNavItemClick(project);
+                      handleNavItemSelect(idx);
                     }
                   }}
                 >
@@ -114,10 +129,10 @@ function HomeProjects() {
                   role="button"
                   aria-pressed={selectedIdx === idx}
                   onMouseEnter={() => handleNavItemMouseEnter(idx)}
-                  onClick={() => handleNavItemClick(project)}
+                  onClick={() => handleNavItemDesktopClick(project, idx)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
-                      handleNavItemClick(project);
+                      handleNavItemDesktopClick(project, idx);
                     }
                   }}
                 >
@@ -132,7 +147,19 @@ function HomeProjects() {
             </div>
           </aside>
           <section className="project-details-box">
-            <div className="project-image-full">
+            <div 
+              className="project-image-full"
+              onClick={handleMediaClick}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleMediaClick();
+                }
+              }}
+              aria-label={`View ${featuredProjects[selectedIdx].title} project details`}
+            >
               {featuredProjects[selectedIdx].type === "image" ? (
                 <img
                   src={featuredProjects[selectedIdx].media}
@@ -157,7 +184,7 @@ function HomeProjects() {
                     },
                   }}
                   className="youtube-player"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "100%", pointerEvents: "none" }}
                 />
               ) : (
                 <video
@@ -166,9 +193,15 @@ function HomeProjects() {
                   muted
                   loop
                   playsInline
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "100%", pointerEvents: "none" }}
                 />
               )}
+              
+              {/* Mobile tap indicator */}
+              <div className="mobile-tap-indicator">
+                <span className="tap-text">TAP TO VIEW PROJECT</span>
+                <span className="tap-icon">👆</span>
+              </div>
             </div>
             <div className="project-info-overlay">
               <div className="project-chips">

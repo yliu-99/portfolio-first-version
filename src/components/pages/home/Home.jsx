@@ -18,7 +18,7 @@ function Home() {
     };
 
     return (
-        <div>
+        <div className="home-page">
           <SEO
             title="Graphic Design Vancouver, Yuhan Liu BCIT New Media Portfolio"
             description="Vancouver-based graphic designer and multimedia artist Yuhan Liu showcases innovative design projects. BCIT New Media graduate specializing in branding, web design, and creative visual storytelling solutions."
