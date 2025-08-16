@@ -56,9 +56,9 @@ export const websiteSchema = {
     "Brand Identity Design", 
     "Web Design",
     "Logo Design",
-    "Print Design",
+    "Sound Design",
     "Digital Media Production",
-    "Visual Communication"
+    "Visual Storytelling"
   ]
 };
 
