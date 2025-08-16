@@ -1,4 +1,4 @@
-import "./header.scss";
+import "./Header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import logoFull from "../../assets/logo/logo-full.png"; // Adjust path if necessary
