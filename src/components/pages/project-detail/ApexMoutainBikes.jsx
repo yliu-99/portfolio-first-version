@@ -93,7 +93,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={apexInterview} alt="" />
+            <img src={apexInterview} alt="Behind-the-scenes photo of actor being interviewed for Apex Mountain Bikes commercial" />
           </div>
           
           <h3>Music Production</h3>
@@ -102,7 +102,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={garageBand} alt="" />
+            <img src={garageBand} alt="GarageBand music production interface showing R&B Hip Hop tracks for Apex commercial" />
           </div>
           
           <h3>Video Edit</h3>
@@ -111,7 +111,7 @@ function ApexMountainBikes() {
           </p>
           
           <div className="process-image">
-            <img src={premierPro} alt="" />
+            <img src={premierPro} alt="Adobe Premiere Pro video editing timeline for Apex Mountain Bikes commercial" />
           </div>
           
           <h3>Final Touches</h3>

@@ -146,7 +146,7 @@ const curve = [
                   <div className="obsession-category">{currentObsession.category}</div>
                 </div>
                 <div className="obsession-image">
-                  <img src={currentObsession.image} alt="" />
+                  <img src={currentObsession.image} alt={`${currentObsession.item} - ${currentObsession.category}`} />
                 </div>
                 <div className="obsession-updated">
                   {currentObsession.updated}
@@ -291,13 +291,13 @@ const curve = [
         
         <div className="hero-elements">
           <div className="circle">
-            <img src="https://i.postimg.cc/L8fKSHR5/bluecircle.png" alt="" />
+            <img src="https://i.postimg.cc/L8fKSHR5/bluecircle.png" alt="Blue decorative circle element" />
           </div>
           <div className="moth">
-            <img src="https://i.postimg.cc/GpC0hZhQ/luna-moth.png" alt="" />
+            <img src="https://i.postimg.cc/GpC0hZhQ/luna-moth.png" alt="Luna moth decorative illustration" />
           </div>
           <div className="animated-text">
-            <img src={circleTextSvg} alt="" />
+            <img src={circleTextSvg} alt="Rotating circular text animation" />
           </div>
           <div className="design-text">
             <h4>DESIGN</h4>
