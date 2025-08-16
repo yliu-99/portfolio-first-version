@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { projectsData } from '../../../data/projectsData';
+import SEO from '../../SEO/SEO';
+import { createProjectSchema, createBreadcrumbSchema } from '../../SEO/schemas';
 import './Video.scss';
 
 function Video() {
@@ -25,6 +27,32 @@ function Video() {
     });
   };
 
+  // Create structured data for video/motion showcase
+  const videoJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      createBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Video & Motion", url: "/video" }
+      ]),
+      {
+        "@type": "CollectionPage",
+        "name": "Video & Motion Graphics Portfolio",
+        "description": "Professional video production and motion graphics portfolio showcasing storytelling, animation, and multimedia content by Yuhan Liu, Vancouver multimedia artist.",
+        "url": "https://yliu-99.github.io/portfolio-first-version/video",
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": videoProjects.length,
+          "itemListElement": videoProjects.map((project, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": createProjectSchema(project)
+          }))
+        }
+      }
+    ]
+  };
+
   if (isLoading) {
     return (
       <div className="video-page">
@@ -37,13 +65,21 @@ function Video() {
 
   return (
     <div className="video-page">
+      <SEO
+        title="Video & Motion Graphics Portfolio, Yuhan Liu Vancouver Multimedia Artist"
+        description="Discover Yuhan Liu's video production and motion graphics portfolio featuring compelling storytelling, animation, and multimedia content. Vancouver-based multimedia artist with music and theatre background creating engaging visual narratives."
+        keywords="video production portfolio, motion graphics vancouver, multimedia artist portfolio, video storytelling, animation portfolio, video editing vancouver, motion design, creative video content, multimedia production vancouver"
+        canonicalUrl="https://yliu-99.github.io/portfolio-first-version/video"
+        ogType="website"
+        jsonLd={videoJsonLd}
+      />
       {/* Header Section */}
       <section className="discipline-header">
         <div className="container">
           <div className="header-content">
             <h1 className="discipline-title">VIDEO & MOTION GRAPHICS</h1>
             <p className="discipline-description">
-              Having studied music and theatre previously, I have a passion for creating compelling stories through video and motion graphics. This section showcases my work in video production, animation, storytelling, and sound design where I blend creativity with technical skills to produce engaging content.
+              Drawing from my background in <strong>music and theatre</strong>, I create <em>compelling visual stories</em> through video production and motion graphics. This portfolio showcases my expertise in <strong>video production, animation, storytelling, and sound design</strong> where I blend creativity with technical skills to produce engaging multimedia content that resonates with audiences.
             </p>
           </div>
         </div>

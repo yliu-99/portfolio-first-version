@@ -61,17 +61,17 @@ function Hamburger() {
           <div className="container">
             <ul className="socials">
               <li className="youtube">
-                <a href="#" aria-label="YouTube">
+                <a href="https://www.youtube.com/@Yuhan_Liu" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                   <FontAwesomeIcon icon="fa-brands fa-youtube" />
                 </a>
               </li>
               <li className="linkedin">
-                <a href="#" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/yuhan-liu-1a571524b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <FontAwesomeIcon icon="fa-brands fa-square-linkedin" />
                 </a>
               </li>
               <li className="instagram">
-                <a href="#" aria-label="Instagram">
+                <a href="https://instagram.com/_yuhan.liu_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <FontAwesomeIcon icon="fa-brands fa-square-instagram" />
                 </a>
               </li>
@@ -79,13 +79,13 @@ function Hamburger() {
             <nav className="main-menu">
               <ul className="navigation">
                 <li>
-                  <Link to="/about">ABOUT</Link>
+                  <Link to="/about" title="About Yuhan Liu - Vancouver Graphic Designer">ABOUT</Link>
                 </li>
                 <li>
-                  <Link to="/projects">PROJECTS</Link>
+                  <Link to="/projects" title="Design Projects Portfolio - Graphic Design & Multimedia">PROJECTS</Link>
                 </li>
                 <li className="center-link">
-                  <Link to="/" className="middle">
+                  <Link to="/" className="middle" title="Yuhan Liu Portfolio - Home">
                     <div
                       className="logo"
                       style={{
@@ -95,17 +95,17 @@ function Hamburger() {
                     >
                       <img
                         src={logoFull}
-                        alt="yuhan liu's logo"
+                        alt="Yuhan Liu Logo - Vancouver Graphic Designer"
                       />
                     </div>
                     YUHAN LIU
                   </Link>
                 </li>
                 <li>
-                  <Link to="/graphic">GRAPHIC</Link>
+                  <Link to="/graphic" title="Graphic Design Portfolio - Branding & Visual Identity">GRAPHIC</Link>
                 </li>
                 <li>
-                  <Link to="/video">VIDEO</Link>
+                  <Link to="/video" title="Video & Motion Graphics Portfolio - Multimedia Content">VIDEO</Link>
                 </li>
               </ul>
             </nav>
@@ -176,37 +176,37 @@ function Hamburger() {
             
             <ul className="mobile-navigation">
               <li>
-                <Link to="/" onClick={closeMenu}>HOME</Link>
+                <Link to="/" onClick={closeMenu} title="Home - Yuhan Liu Portfolio">HOME</Link>
               </li>
               <li>
-                <Link to="/about" onClick={closeMenu}>ABOUT</Link>
+                <Link to="/about" onClick={closeMenu} title="About Yuhan Liu - Vancouver Graphic Designer">ABOUT</Link>
               </li>
               <li>
-                <Link to="/projects" onClick={closeMenu}>PROJECTS</Link>
+                <Link to="/projects" onClick={closeMenu} title="Design Projects Portfolio - Graphic Design & Multimedia">PROJECTS</Link>
               </li>
               <li>
-                <Link to="/graphic" onClick={closeMenu}>GRAPHIC</Link>
+                <Link to="/graphic" onClick={closeMenu} title="Graphic Design Portfolio - Branding & Visual Identity">GRAPHIC</Link>
               </li>
               <li>
-                <Link to="/video" onClick={closeMenu}>VIDEO</Link>
+                <Link to="/video" onClick={closeMenu} title="Video & Motion Graphics Portfolio - Multimedia Content">VIDEO</Link>
               </li>
             </ul>
             
             <ul className="mobile-socials">
               <li>
-                <a href="#" aria-label="YouTube" onClick={closeMenu}>
+                <a href="https://www.youtube.com/@Yuhan_Liu" target="_blank" rel="noopener noreferrer" aria-label="YouTube" onClick={closeMenu}>
                   <FontAwesomeIcon icon="fa-brands fa-youtube" />
                   <span>YouTube</span>
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="LinkedIn" onClick={closeMenu}>
+                <a href="https://www.linkedin.com/in/yuhan-liu-1a571524b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" onClick={closeMenu}>
                   <FontAwesomeIcon icon="fa-brands fa-square-linkedin" />
                   <span>LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Instagram" onClick={closeMenu}>
+                <a href="https://instagram.com/_yuhan.liu_" target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={closeMenu}>
                   <FontAwesomeIcon icon="fa-brands fa-square-instagram" />
                   <span>Instagram</span>
                 </a>

@@ -6,6 +6,8 @@ import {
   RelatedProjects 
 } from './ProjectDetailComponents';
 
+import SEO from '../../SEO/SEO';
+import { createProjectSchema, createBreadcrumbSchema } from '../../SEO/schemas';
 import './ProjectDetail.scss';
 
 import { projectsData } from '../../../data/projectsData'; // Import projects data
@@ -56,15 +58,47 @@ function FableFragrances() {
     mediaType: project.type
   }));
 
+  // SEO data for this specific project
+  const projectData = {
+    title: "Fable Fragrances",
+    slug: "fable-fragrances",
+    description: "Fable Fragrances brand design project featuring perfume packaging, logo design, and visual identity created in Adobe Photoshop. A comprehensive branding project showcasing storytelling through design.",
+    category: "Brand Design",
+    year: "2024",
+    chips: ['graphic design', 'photoshop', 'branding', 'packaging'],
+    image: "/src/assets/projects/fable-fragrances.png"
+  };
+
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      createProjectSchema(projectData),
+      createBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Projects", url: "/projects" },
+        { name: "Fable Fragrances", url: "/projects/fable-fragrances" }
+      ])
+    ]
+  };
+
   return (
     <ProjectDetailLayout projectTitle="Fable Fragrances Brand Design">
+      <SEO
+        title="Fable Fragrances Brand Design Project, Yuhan Liu Vancouver Designer"
+        description="Explore Fable Fragrances, a comprehensive brand design project featuring perfume packaging, logo design, and visual identity. Created by Yuhan Liu using Adobe Photoshop, showcasing storytelling through thoughtful branding and packaging design."
+        keywords="fable fragrances project, brand design portfolio, packaging design vancouver, perfume branding, logo design project, photoshop design work, yuhan liu branding, visual identity design, storytelling design"
+        canonicalUrl="https://yliu-99.github.io/portfolio-first-version/projects/fable-fragrances"
+        ogType="article"
+        ogImage="https://yliu-99.github.io/portfolio-first-version/src/assets/projects/fable-fragrances.png"
+        jsonLd={projectJsonLd}
+      />
       
       {/* Hero Section */}
       <ProjectHero 
         title="FABLE FRAGRANCES"
         category="Brand Design"
         year="2024"
-        description="Fable Fragrances is a collection of three smaller projects and one final project completed for the Photoshop course during Term 1 at BCIT. The assignment involved creating a fictional brand that offers a product requiring box packaging. The process began with selecting a cohesive color palette, followed by designing a logo, creating a business card, and culminating in a 3D packaging mockup."
+        description="Fable Fragrances represents a comprehensive brand design project featuring **perfume packaging design**, **visual identity creation**, and **storytelling through branding**. This BCIT New Media project demonstrates expertise in Adobe Photoshop while creating an emotional narrative through thoughtful packaging design and brand development."
         media={fableFragrancesImage}
         mediaType="image"
         chips={['graphic design', 'photoshop', 'branding', 'packaging']}
@@ -74,11 +108,12 @@ function FableFragrances() {
       {/* Goals Section */}
       <ProjectGoals customContent={
         <div>
+          <h2>Project Goals & Brand Strategy</h2>
           <p>
-            The main goal was to effectively communicate the brand's story through thoughtful packaging design while demonstrating our skills in Adobe Photoshop. This project challenged me to not only design within the constraints of a brand identity system but also to communicate an emotional narrative through packaging design.
+            The primary objective was to create a <strong>cohesive brand identity</strong> that effectively communicates the brand's story through <em>thoughtful packaging design</em> while demonstrating advanced skills in <strong>Adobe Photoshop</strong>. This project challenged me to design within the constraints of a comprehensive brand identity system while communicating an emotional narrative through packaging design.
           </p>
           <p>
-            I chose to focus on perfume as the product for this project because of its deep connection to self-expression and imagination. Perfume invites creativity by nature as it's personal, emotional, and often intangible, which makes it the perfect medium to build a brand rooted in storytelling.
+            I chose to focus on <strong>perfume branding</strong> for this project because of its deep connection to <em>self-expression and imagination</em>. Perfume invites creativity by nature as it's personal, emotional, and often intangible, making it the perfect medium to build a brand rooted in <strong>visual storytelling</strong> and <strong>brand narrative development</strong>.
           </p>
         </div>
       } />

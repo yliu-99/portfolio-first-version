@@ -34,17 +34,17 @@ function Header() {
         <div className="container">
           <ul className="socials">
             <li className="youtube">
-              <a href="#">
+              <a href="https://www.youtube.com/@Yuhan_Liu" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon="fa-brands fa-youtube" />
               </a>
             </li>
             <li className="linkedin">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/yuhan-liu-1a571524b/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon="fa-brands fa-square-linkedin" />
               </a>
             </li>
             <li className="instagram">
-              <a href="#">
+              <a href="https://instagram.com/_yuhan.liu_" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon="fa-brands fa-square-instagram" />
               </a>
             </li>

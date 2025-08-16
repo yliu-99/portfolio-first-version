@@ -19,6 +19,17 @@ function Footer() {
               <a href="mailto:yuhancreates@gmail.com" className="email-link">
                 yuhancreates@gmail.com
               </a>
+              <div className="social-links">
+                <a href="https://www.linkedin.com/in/yuhan-liu-1a571524b/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FontAwesomeIcon icon="fa-brands fa-linkedin" />
+                </a>
+                <a href="https://instagram.com/_yuhan.liu_" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FontAwesomeIcon icon="fa-brands fa-instagram" />
+                </a>
+                <a href="https://www.youtube.com/@Yuhan_Liu" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FontAwesomeIcon icon="fa-brands fa-youtube" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

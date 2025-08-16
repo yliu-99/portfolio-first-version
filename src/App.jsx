@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 import Home from './components/pages/home/Home';
 import About from './components/pages/about/About';
@@ -87,20 +88,22 @@ function NotFound() {
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        {/* Hamburger Header with responsive design */}
-        <Hamburger />
-        
-        {/* Main content area with page transitions */}
-        <main className="main-content">
-          <AnimatedRoutes />
-        </main>
-        
-        {/* Footer always visible on all pages */}
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          {/* Hamburger Header with responsive design */}
+          <Hamburger />
+          
+          {/* Main content area with page transitions */}
+          <main className="main-content">
+            <AnimatedRoutes />
+          </main>
+          
+          {/* Footer always visible on all pages */}
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

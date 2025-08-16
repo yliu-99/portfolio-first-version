@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { projectsData, getProjectsByCategory } from '../../../data/projectsData';
+import SEO from '../../SEO/SEO';
+import { createProjectSchema, createBreadcrumbSchema } from '../../SEO/schemas';
 import './Graphic.scss';
 
 function Graphic() {
@@ -23,6 +25,32 @@ function Graphic() {
     });
   };
 
+  // Create structured data for graphic design showcase
+  const graphicJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      createBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Graphic Design", url: "/graphic" }
+      ]),
+      {
+        "@type": "CollectionPage",
+        "name": "Graphic Design Portfolio",
+        "description": "Professional graphic design portfolio showcasing branding, print design, and digital illustrations by Yuhan Liu, Vancouver-based designer.",
+        "url": "https://yliu-99.github.io/portfolio-first-version/graphic",
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": graphicProjects.length,
+          "itemListElement": graphicProjects.map((project, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": createProjectSchema(project)
+          }))
+        }
+      }
+    ]
+  };
+
   if (isLoading) {
     return (
       <div className="graphic-page">
@@ -35,13 +63,21 @@ function Graphic() {
 
   return (
     <div className="graphic-page">
+      <SEO
+        title="Graphic Design Portfolio, Yuhan Liu Vancouver Designer"
+        description="Explore Yuhan Liu's professional graphic design portfolio featuring bold branding projects, print design, digital illustrations, and visual storytelling. Vancouver-based BCIT New Media designer creating impactful design solutions."
+        keywords="graphic design portfolio vancouver, yuhan liu graphic design, branding design vancouver, print design portfolio, digital illustrations, visual storytelling design, vancouver graphic designer, creative design projects"
+        canonicalUrl="https://yliu-99.github.io/portfolio-first-version/graphic"
+        ogType="website"
+        jsonLd={graphicJsonLd}
+      />
       {/* Header Section */}
       <section className="discipline-header">
         <div className="container">
           <div className="header-content">
             <h1 className="discipline-title">GRAPHIC DESIGN</h1>
             <p className="discipline-description">
-              I love design that is bold, impactful, and tells a story. My graphic design projects range from branding and print design to digital illustrations and marketing materials. Each project is crafted with attention to detail and a focus on visual storytelling.
+              <strong>Bold, impactful design that tells compelling stories.</strong> My graphic design projects span from <em>branding and visual identity</em> to <em>print design and digital illustrations</em>. Each project showcases attention to detail with a focus on <strong>creative visual storytelling</strong> and effective communication. Discover professional design work created with passion for innovative solutions.
             </p>
           </div>
         </div>
