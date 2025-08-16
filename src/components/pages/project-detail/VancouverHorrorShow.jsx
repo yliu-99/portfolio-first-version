@@ -5,9 +5,9 @@ import './ProjectDetail.scss';
 import { projectsData, getProjectBySlug } from '../../../data/projectsData'; // Import projects data
 
 // Import images directly
-import fableFragrancesImage from '../../../assets/projects/fable-fragrances.png';
-import thrashHairImage from '../../../assets/projects/thrash.svg';
-import vancouverHorrorShowImage from '../../../assets/projects/vancouver-horror-show.png';
+const fableFragrancesImage = "https://i.postimg.cc/NjVMJGD0/fable-fragrances.png";
+const thrashHairImage = "https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png";
+const vancouverHorrorShowImage = "https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png";
 
 function VancouverHorrorShow() {
   // Get project data from projectsData
@@ -15,8 +15,8 @@ function VancouverHorrorShow() {
   
   // Create image mapping for proper imports
   const imageMap = {
-    'src/assets/projects/fable-fragrances.png': fableFragrancesImage,
-    'src/assets/projects/thrash.svg': thrashHairImage
+    'https://i.postimg.cc/NjVMJGD0/fable-fragrances.png': fableFragrancesImage,
+    'https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png': thrashHairImage
   };
 
   // Filter for design projects excluding the current project and limit to 2

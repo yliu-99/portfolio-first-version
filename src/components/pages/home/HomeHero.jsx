@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./HomeHero.scss";
+import circleTextSvg from '../../../assets/hero/circletext.svg';
 
 // Energy tracker lines for each hour
 const energyLines = {
@@ -290,13 +291,13 @@ const curve = [
         
         <div className="hero-elements">
           <div className="circle">
-            <img src="src\assets\hero\bluecircle.png" alt="" />
+            <img src="https://i.postimg.cc/L8fKSHR5/bluecircle.png" alt="" />
           </div>
           <div className="moth">
-            <img src="src\assets\hero\luna-moth.png" alt="" />
+            <img src="https://i.postimg.cc/GpC0hZhQ/luna-moth.png" alt="" />
           </div>
           <div className="animated-text">
-            <img src="src\assets\hero\circletext.svg" alt="" />
+            <img src={circleTextSvg} alt="" />
           </div>
           <div className="design-text">
             <h4>DESIGN</h4>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
 // Helper to extract YouTube video ID from embed URL
@@ -15,7 +16,7 @@ function ProjectsCard({ project, index, variant = 'default' }) {
       className={`project-card project-card--${variant}`}
       style={{ '--animation-delay': `${index * 0.1}s` }}
     >
-      <a href={`/projects/${project.slug}`} className="card-link">
+      <Link to={`/projects/${project.slug}`} className="card-link">
         <div className="project-media">
           {project.type === 'video' && getYouTubeId(project.media) ? (
             <YouTube
@@ -96,7 +97,7 @@ function ProjectsCard({ project, index, variant = 'default' }) {
             </div>
           )}
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

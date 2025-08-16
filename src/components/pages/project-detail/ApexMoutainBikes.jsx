@@ -13,10 +13,10 @@ import '../../../data/projectsData'; // Import projects data
 // Placeholder image for all media
 const placeholderImage = "https://via.placeholder.com/800x400";
 const apexMoutainBikesVid = 'https://www.youtube.com/embed/dO7TxaDxEjk?si=Z77HXMo1kgau1YqQ';
-import apexScreenshot from '../../../assets/projects/apex/apex-screenshot.png';
-import apexInterview from '../../../assets/projects/apex/apex-interview.png';
-import garageBand from '../../../assets/projects/apex/garage-band.jpg';
-import premierPro from '../../../assets/projects/apex/premier-pro.jpg';
+const apexScreenshot = "https://i.postimg.cc/MHdZyzXq/apex-screenshot.png";
+const apexInterview = "https://i.postimg.cc/nVkL8G2g/apex-interview.png";
+const garageBand = "https://i.postimg.cc/X7YYnBDJ/garage-band.jpg";
+const premierPro = "https://i.postimg.cc/RhMV6WSg/premier-pro.jpg";
 
 
 // images

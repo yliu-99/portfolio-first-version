@@ -13,9 +13,9 @@ import './ProjectDetail.scss';
 import { projectsData } from '../../../data/projectsData'; // Import projects data
 
 // Import images directly
-import fableFragrancesImage from '../../../assets/projects/fable-fragrances.png';
-import thrashHairImage from '../../../assets/projects/thrash.svg';
-import vancouverHorrorShowImage from '../../../assets/projects/vancouver-horror-show.png';
+const fableFragrancesImage = "https://i.postimg.cc/NjVMJGD0/fable-fragrances.png";
+const thrashHairImage = "https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png";
+const vancouverHorrorShowImage = "https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png";
 
 // Import process images
 import swatchScreenshot from '../../../assets/projects/fable/swatch-screenshot.png';
@@ -39,9 +39,9 @@ const processImages = [
 function FableFragrances() {
   // Create image mapping for proper imports
   const imageMap = {
-    'src/assets/projects/fable-fragrances.png': fableFragrancesImage,
-    'src/assets/projects/thrash.svg': thrashHairImage,
-    'src/assets/projects/vancouver-horror-show.png': vancouverHorrorShowImage
+    'https://i.postimg.cc/NjVMJGD0/fable-fragrances.png': fableFragrancesImage,
+    'https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png': thrashHairImage,
+    'https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png': vancouverHorrorShowImage
   };
 
   // Filter for design projects excluding the current project (Fable Fragrances)
@@ -66,7 +66,7 @@ function FableFragrances() {
     category: "Brand Design",
     year: "2024",
     chips: ['graphic design', 'photoshop', 'branding', 'packaging'],
-    image: "/src/assets/projects/fable-fragrances.png"
+    image: "https://i.postimg.cc/NjVMJGD0/fable-fragrances.png"
   };
 
   const projectJsonLd = {
@@ -89,7 +89,7 @@ function FableFragrances() {
         keywords="fable fragrances project, brand design portfolio, packaging design vancouver, perfume branding, logo design project, photoshop design work, yuhan liu branding, visual identity design, storytelling design"
         canonicalUrl="https://yliu-99.github.io/portfolio-first-version/projects/fable-fragrances"
         ogType="article"
-        ogImage="https://yliu-99.github.io/portfolio-first-version/src/assets/projects/fable-fragrances.png"
+        ogImage="https://i.postimg.cc/NjVMJGD0/fable-fragrances.png"
         jsonLd={projectJsonLd}
       />
       

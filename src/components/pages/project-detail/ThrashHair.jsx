@@ -5,9 +5,9 @@ import './ProjectDetail.scss';
 import { projectsData } from '../../../data/projectsData'; // Import projects data
 
 // Import images directly
-import fableFragrancesImage from '../../../assets/projects/fable-fragrances.png';
-import vancouverHorrorShowImage from '../../../assets/projects/vancouver-horror-show.png';
-import thrashHairImage from '../../../assets/projects/thrash.svg';
+const fableFragrancesImage = "https://i.postimg.cc/NjVMJGD0/fable-fragrances.png";
+const vancouverHorrorShowImage = "https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png";
+const thrashHairImage = "https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png";
 
 // Placeholder images - replace with actual project images
 const proposalImage = "https://i.postimg.cc/26RDWs53/Illustration-Proposal-4.jpg";
@@ -26,8 +26,8 @@ const logoSketch5 = "https://i.postimg.cc/CKw58nrW/sketch-5.jpg";
 function ThrashHair() {
   // Create image mapping for proper imports
   const imageMap = {
-    'src/assets/projects/fable-fragrances.png': fableFragrancesImage,
-    'src/assets/projects/vancouver-horror-show.png': vancouverHorrorShowImage
+    'https://i.postimg.cc/NjVMJGD0/fable-fragrances.png': fableFragrancesImage,
+    'https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png': vancouverHorrorShowImage
   };
 
   // Filter for design projects excluding the current project (Thrash Hair) and limit to 2

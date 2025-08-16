@@ -1,5 +1,5 @@
 import "./HomeProjects.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { projectsData } from "../../../data/projectsData";
 import { useState, useEffect, useRef } from "react";
 import YouTube from 'react-youtube';
@@ -11,6 +11,7 @@ function getYouTubeId(url) {
 }
 
 function HomeProjects() {
+  const navigate = useNavigate();
   const featuredProjects = projectsData.filter(
     (project) =>
       project.featured && project.id !== "thrash" && project.id !== "horizons"
@@ -53,7 +54,7 @@ function HomeProjects() {
   };
 
   const handleNavItemClick = (project) => {
-    window.location.href = `/projects/${project.slug}`;
+    navigate(`/projects/${project.slug}`);
   };
 
   return (

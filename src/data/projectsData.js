@@ -1,7 +1,7 @@
 
-const fableFragrancesImage = "src/assets/projects/fable-fragrances.png";
-const vancouverHorrorShowImage = "src/assets/projects/vancouver-horror-show.png";
-const thrashHairImage = "src/assets/projects/thrash.svg";
+const fableFragrancesImage = "https://i.postimg.cc/NjVMJGD0/fable-fragrances.png";
+const vancouverHorrorShowImage = "https://i.postimg.cc/VNCN3yZW/vancouver-horror-show.png";
+const thrashHairImage = "https://i.postimg.cc/X796SjnJ/Logo-Dark-OG.png";
 const apexMountainBikesVid = "https://www.youtube.com/embed/dO7TxaDxEjk?si=Z77HXMo1kgau1YqQ";
 const trueHorizonsVid = "https://www.youtube.com/embed/EbJEhks53lA?si=RYiRPDSJ0d7MVQMW";
 const mythbustersVid = "https://www.youtube.com/embed/ioG4kkKj6ZM?si=ymFZFlZC33jhShYV";
