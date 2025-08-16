@@ -37,7 +37,7 @@ function HomeHero() {
   const [workStatus, setWorkStatus] = useState('STUDYING');
   const [clockExpanded, setClockExpanded] = useState(false);
   const [statusExpanded, setStatusExpanded] = useState(false);
-  const [energyExpanded, setEnergyExpanded] = useState(false);
+  const [energyExpanded, setEnergyExpanded] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [obsessionExpanded, setObsessionExpanded] = useState(true); // Open by default
   const [energyLevel, setEnergyLevel] = useState(0);
