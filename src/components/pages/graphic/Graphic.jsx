@@ -89,13 +89,20 @@ function Graphic() {
           <div key={project.id} className={`project-feature ${index % 2 === 0 ? 'left-aligned' : 'right-aligned'}`}>
             <div className="project-media">
               {project.type === 'image' ? (
-                <img src={project.media} alt={project.title} />
+                <img 
+                  src={project.media} 
+                  alt={`${project.title} - Graphic Design Project by Yuhan Liu`}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
               ) : project.type === 'video' ? (
                 <iframe
                   src={project.media}
-                  title={project.title}
+                  title={`${project.title} - Video Project by Yuhan Liu`}
                   frameBorder="0"
                   allowFullScreen
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', border: 'none' }}
                 />
               ) : null}
             </div>

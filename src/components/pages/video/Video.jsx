@@ -93,12 +93,19 @@ function Video() {
               {project.type === 'video' ? (
                 <iframe
                   src={project.media}
-                  title={project.title}
+                  title={`${project.title} - Video Project by Yuhan Liu`}
                   frameBorder="0"
                   allowFullScreen
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', border: 'none' }}
                 />
               ) : project.type === 'image' ? (
-                <img src={project.media} alt={project.title} />
+                <img 
+                  src={project.media} 
+                  alt={`${project.title} - Video/Motion Project by Yuhan Liu`}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
               ) : null}
             </div>
             <div className="project-content">

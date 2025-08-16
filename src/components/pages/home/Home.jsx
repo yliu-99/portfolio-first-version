@@ -1,7 +1,6 @@
 import HomeHero from "./HomeHero";
 import HomeAbout from "./HomeAbout";
 import HomeProjects from "./HomeProjects";
-import HomeContent from "./HomeContent";
 import SEO from "../../SEO/SEO";
 import { personSchema, websiteSchema, createBreadcrumbSchema } from "../../SEO/schemas";
 
@@ -29,7 +28,6 @@ function Home() {
             jsonLd={homeJsonLd}
           />
           <HomeHero />
-          <HomeContent />
           <HomeProjects />
         </div>
     );

@@ -167,6 +167,61 @@
         &:last-child {
           margin-bottom: 0;
         }
+
+        // Consistent highlight styles matching site design
+        .highlight-primary {
+          position: relative;
+          font-weight: 700;
+          color: var(--red);
+          background: rgba(var(--red-rgb), 0.05);
+          padding: 2px 8px;
+          border-radius: 4px;
+          border-left: 3px solid var(--red);
+          margin: 0 2px;
+          display: inline-block;
+          transform: skew(-1deg);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(var(--red-rgb), 0.1);
+            transform: skew(-1deg) translateY(-1px);
+          }
+        }
+
+        .highlight-secondary {
+          position: relative;
+          font-weight: 600;
+          color: var(--black);
+          background: rgba(var(--black-rgb), 0.05);
+          padding: 2px 8px;
+          border-radius: 4px;
+          border-bottom: 2px solid var(--black);
+          margin: 0 1px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(var(--black-rgb), 0.1);
+            transform: translateY(-1px);
+          }
+        }
+
+        .highlight-accent {
+          position: relative;
+          font-weight: 600;
+          color: var(--blue);
+          background: rgba(var(--blue-rgb), 0.05);
+          padding: 1px 6px;
+          border-radius: 3px;
+          border-top: 2px solid var(--blue);
+          margin: 0 1px;
+          font-style: italic;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(var(--blue-rgb), 0.1);
+            transform: scale(1.02);
+          }
+        }
       }
     }
   }

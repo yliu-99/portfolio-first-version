@@ -108,7 +108,6 @@ function FableFragrances() {
       {/* Goals Section */}
       <ProjectGoals customContent={
         <div>
-          <h2>Project Goals & Brand Strategy</h2>
           <p>
             The primary objective was to create a <strong>cohesive brand identity</strong> that effectively communicates the brand's story through <em>thoughtful packaging design</em> while demonstrating advanced skills in <strong>Adobe Photoshop</strong>. This project challenged me to design within the constraints of a comprehensive brand identity system while communicating an emotional narrative through packaging design.
           </p>
