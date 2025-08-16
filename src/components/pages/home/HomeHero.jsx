@@ -44,7 +44,7 @@ function HomeHero() {
   const [energyLine, setEnergyLine] = useState("");
   const [currentObsession, setCurrentObsession] = useState({
     title: 'LATEST OBSESSION',
-    item: 'HELLY KITTY ISLAND ADVENTURE',
+    item: 'HELLO KITTY ISLAND ADVENTURE',
     category: 'VIDEO GAME',
     description: 'Exploring bold, raw typographic compositions inspired by brutalist architecture',
     image: 'https://www.gameshub.com/wp-content/uploads/sites/5/2023/09/hello-kitty-island-adventure-new-update.jpg', // Small accent image
