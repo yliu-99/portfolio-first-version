@@ -9,14 +9,17 @@ jobs:
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
+
       - name: Use Node.js 20
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - name: ⛏️Build Project
+
+      - name: ⛏️ Build Project
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
+
       - name: 📁 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
