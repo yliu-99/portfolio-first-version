@@ -61,10 +61,7 @@ function Values() {
               </div>
             </div>
           </div>
-          <div className="values-image">
-            <img src="src/assets/about/maple-seeds.png" alt="Maple seeds" />
-          </div>
-        </div>
+                  </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ function Overview() {
     <div className="about-overview">
       <div className="overview-layout">
         <div className="overview-image-section">
-          <img src="src\assets\about\about-me.JPEG" alt="About me" />
+          <img src="https://i.postimg.cc/2SjhR5nF/about-me.jpg" alt="About me" />
         </div>
         <div className="overview-content-section">
           <div className="content">
